@@ -18,7 +18,7 @@ router.put("/user", userControllers.edit);
 
 // Route to delete existed users
 router.delete("/user", userControllers.destroy);
-// activateAccount
+
 // re-send activation code
 router.patch("/npassword", userControllers.updatePassword);
 // resend code  used to reset password
