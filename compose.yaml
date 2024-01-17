@@ -27,28 +27,6 @@ services:
       DB_PASSWORD: ${USER_PASSWORD:-!ChangeMe!}
       DB_NAME: ${DB_NAME:-bordeaux_hackaton}
 
-  back-php:
-    build:
-      context: ./back-php
-      target: phpserver
-    depends_on:
-      database:
-        condition: service_healthy
-    restart: unless-stopped
-    tty: true
-    environment:
-      DATABASE_URL: mysql://${USER_NAME:-root}:${USER_PASSWORD:-!ChangeMe!}@${DATABASE_SUBDOMAIN_NAME:-database}:3306/${DB_NAME:-bordeaux_hackaton}?serverVersion=${MYSQL_VERSION:-8.0.3}&charset=${MYSQL_CHARSET:-utf8mb4}
-      DB_USER: ${USER_NAME:-root}
-      DB_PASSWORD: ${USER_PASSWORD:-!ChangeMe!}
-      DB_HOST: ${DATABASE_SUBDOMAIN_NAME:-database}
-      DB_NAME: ${DB_NAME:-bordeaux_hackaton}
-    volumes:
-        - ./back-php:/var/www
-    ports:
-      # HTTP
-      - target: 80
-        published: 8000
-        protocol: tcp
 
   data-python:
     build:
