@@ -30,6 +30,7 @@ export default function Connexion() {
     };
 
     async function handleSubmit() {
+        console.log(formValue);
         await login(formValue);
     }
 
@@ -38,12 +39,14 @@ export default function Connexion() {
 
             <MDBValidationItem feedback='Please choose a username.' invalid className='col-md-4'>
                 <MDBInputGroup textBefore='@'>
-                    <input
+                    <MDBInput
                         type='email'
+                        value={formValue.email}
                         className='form-control'
                         id='validationCustomUsername'
                         placeholder='email'
                         required
+                        onChange={onChange}
                         name='email'
                         pattern='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/'
                     />
@@ -53,7 +56,7 @@ export default function Connexion() {
             <MDBValidationItem className='col-md-6' feedback='Please provide a valid zip.' invalid>
                 <MDBInput
                     type="password"
-                    value={formValue.zip}
+                    value={formValue.password}
                     name='password'
                     onChange={onChange}
                     id='validationCustom05'

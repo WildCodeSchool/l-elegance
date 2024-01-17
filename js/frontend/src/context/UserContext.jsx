@@ -1,10 +1,12 @@
 import { createContext, useContext, useMemo, useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const userContext = createContext();
 
 export default function UserContextProvider({ children }) {
+    const navigate = useNavigate();
     const [user, setUser] = useState({ isConnected: false });
     const [messageUser, setMessageUser] = useState({ isConnected: false });
 
@@ -28,17 +30,17 @@ export default function UserContextProvider({ children }) {
 
 
     async function login(credentials) {
-        const { headers, userdb, message } = await checkCredentials(credentials);
+        const { userdb, message } = await checkCredentials(credentials);
         if (userdb) {
-            localStorage.setItem("user", JSON.stringify(headers.token));
+            localStorage.setItem("user", JSON.stringify(userdb.token));
             setUser({
                 isConnected: true,
                 firstname: userdb.firstname,
                 lastname: userdb.lastname,
                 email: userdb.email,
             });
-            axios.defaults.headers.common.Authorization = `Bearer ${headers.token}`;
-            navigate("/Page1");
+            axios.defaults.headers.common.Authorization = `Bearer ${userdb.token}`;
+            navigate("/page1");
             setMessageUser(message);
         } else {
             axios.defaults.headers.common.Authorization = `Bearer ""`;
