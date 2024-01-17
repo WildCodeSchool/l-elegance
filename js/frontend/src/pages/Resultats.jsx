@@ -1,7 +1,7 @@
 import Bandeau from "../components/Bandeau";
 import InfoPharma from "../components/InfoPharma";
 import Nav from "../components/Nav";
-import Card from "../components/card";
+import Card from "../components/Card";
 
 function Resultats() {
   return (
