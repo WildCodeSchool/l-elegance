@@ -10,24 +10,30 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Home from "./pages/Home";
 import Page1 from "./pages/Page1";
 import UserContextProvider from "./context/UserContext";
+import Stepper from "./pages/Stepper";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:
-      (<UserContextProvider>
+    element: (
+      <UserContextProvider>
         <App />
-      </UserContextProvider>),
+      </UserContextProvider>
+    ),
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/page1",
-        element: <Page1 />
-      }
-    ]
+        element: <Page1 />,
+      },
+      {
+        path: "/stepper",
+        element: <Stepper />,
+      },
+    ],
   },
 ]);
 
