@@ -7,11 +7,27 @@ import App from "./App";
 
 import "mdb-react-ui-kit/dist/scss/mdb.dark.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Home from "./pages/Home";
+import Page1 from "./pages/Page1";
+import UserContextProvider from "./context/UserContext";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element:
+      (<UserContextProvider>
+        <App />
+      </UserContextProvider>),
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/page1",
+        element: <Page1 />
+      }
+    ]
   },
 ]);
 
