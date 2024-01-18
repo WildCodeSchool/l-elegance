@@ -74,7 +74,7 @@ function Modale() {
         <div className="which-ingredients">
           <div className="show-ingredients">
             <button onClick={showUnshow}>
-              <p>Comment appliquer ce produit ?</p>
+              <p>Composition de ce produit</p>
               <img
                 src={rotateArrow ? up : down}
                 alt="Afficher les ingrédients."
@@ -93,7 +93,7 @@ function Modale() {
           {/* <p className="using">{product[0].ingre}</p> */}
         </div>
         <div className="buttons-action">
-          <button className="back-to-diagnostic">Retour au diagnostic.</button>
+          <button className="back-to-diagnostic">RETOUR AU DIAGNOSTIC</button>
         </div>
       </div>
     </div>
