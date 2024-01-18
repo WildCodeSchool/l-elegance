@@ -1,0 +1,150 @@
+.pop-up-product {
+  width: 80vw;
+  display: block;
+  margin: auto;
+  background-color: white;
+}
+
+/* BLOCK LEFT. */
+.pop-up-product > .block-left {
+  height: 50%;
+}
+
+.pop-up-product > .block-left > img {
+  width: 100%;
+}
+
+/* BLOCK RIGHT. */
+.pop-up-product > .block-right {
+  height: 50%;
+  display: block;
+  padding: 20px;
+  border-top: 1px solid black;
+}
+
+.pop-up-product > .block-right > .title {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.pop-up-product > .block-right > .description {
+  color: #d9d9d9;
+  font-style: italic;
+}
+
+.pop-up-product
+  > .block-right
+  > .which-ingredients
+  > .show-ingredients
+  > button {
+  display: flex;
+  font-weight: 700;
+  width: 100%;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+}
+
+.pop-up-product
+  > .block-right
+  > .which-ingredients
+  > .show-ingredients
+  > button
+  > img {
+  height: 25px;
+  width: 25px;
+}
+
+/* BUTTONS. */
+.pop-up-product > .block-right > .buttons-action {
+  width: 70%;
+  margin: auto;
+}
+
+.pop-up-product > .block-right > .buttons-action > button {
+  height: 60px;
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+}
+
+.pop-up-product > .block-right > .buttons-action > .back-to-diagnostic {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.pop-up-product > .block-right > .which-ingredients {
+  margin-bottom: 50px;
+}
+
+/* CATEGORY INGREDIENTS. */
+.pop-up-product > .block-right > .which-ingredients > .show-ingredients {
+  margin-bottom: 30px;
+}
+
+.pop-up-product > .block-right > .which-ingredients > .ingredients {
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+.pop-up-product > .block-right > .which-ingredients > .ingredients > ul > li {
+  color: #d9d9d9;
+  font-size: 0.8rem;
+  margin-bottom: -15px;
+}
+
+/* FORMAT TABLETTE. */
+@media screen and (min-width: 722px) and (max-width: 1200px) {
+  /* BLOCK LEFT. */
+  .pop-up-product > .block-left > img {
+    display: flex;
+    width: 60%;
+    margin: auto;
+  }
+
+  /* BLOCK RIGHT. */
+  .pop-up-product > .block-right {
+    padding: 40px;
+  }
+}
+
+/* FORMAT DESKTOP. */
+@media screen and (min-width: 1200px) {
+  .pop-up-product {
+    /* height: 500px;
+        width: 1000px; */
+    /* height: 80vh; */
+    /* height: 600px; */
+    max-width: 80vw;
+    display: flex;
+    margin: auto;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* BLOCK LEFT. */
+  .pop-up-product > .block-left {
+    width: 50%;
+    display: flex;
+  }
+
+  .pop-up-product > .block-left > img {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* BLOCK RIGHT. */
+  .pop-up-product > .block-right {
+    width: 50%;
+    display: block;
+    padding: 50px;
+    border-left: 1px solid black;
+  }
+
+  .pop-up-product > .block-right > .title {
+    width: 80%;
+  }
+}
