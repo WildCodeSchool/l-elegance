@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 import Bandeau from "../components/Bandeau";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <Nav />
@@ -26,7 +29,11 @@ function Home() {
             vous offrant des solutions qui célèbrent votre beauté intérieure et
             extérieure.
           </p>
-          <button type="button" className="btn-more-round">
+          <button
+            onClick={() => navigate("/le-questionnaire")}
+            type="button"
+            className="btn-more-round"
+          >
             Faire le diagnostic
           </button>
         </div>
@@ -46,10 +53,6 @@ function Home() {
             ac, tincidunt lorem. Cras lobortis tortor quis nisl semper, id
             interdum nibh tincidunt..
           </p>
-          <button type="button" className="btn-more-round">
-            {" "}
-            Faire le diagnostic
-          </button>
         </div>
 
         <div className="container-img-presentation">

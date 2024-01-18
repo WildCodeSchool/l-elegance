@@ -1,16 +1,17 @@
 import { MDBBtn, MDBContainer, MDBIcon } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="logo-wild">
+        <Link to="/" className="logo-wild">
           <img
             className="img-fluid"
             src="../src/assets/logo-loreal-wild.png"
             alt="logo"
           />
-        </div>
+        </Link>
         <MDBContainer className="pt-4 logos">
           <section className="mb-4">
             <MDBBtn

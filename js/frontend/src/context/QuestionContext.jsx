@@ -31,7 +31,7 @@ export default function QuestionContextProvider({ children }) {
     allergie: null,
 
     odora: null,
-  })
+  });
 
   async function sendSurvey() {
     const res = await axios.post("http://localhost:5000/api/1", data);
@@ -39,12 +39,15 @@ export default function QuestionContextProvider({ children }) {
     setProducts([...res.data]);
   }
 
-
   const contextData = useMemo(
-    () => ({ data, setData, sendSurvey, products }), [data, setData, sendSurvey, products]
+    () => ({ data, setData, sendSurvey, products }),
+    [data, setData, sendSurvey, products]
   );
+
   return (
-    <questionContext.Provider value={contextData}>{children}</questionContext.Provider>
+    <questionContext.Provider value={contextData}>
+      {children}
+    </questionContext.Provider>
   );
 }
 QuestionContextProvider.propTypes = {

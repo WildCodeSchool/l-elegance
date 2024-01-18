@@ -111,21 +111,6 @@ export default function UserContextProvider({ children }) {
   return (
     <userContext.Provider value={contextData}>{children}</userContext.Provider>
   );
-  const contextData = useMemo(
-    () => ({
-      user,
-      setUser,
-      messageUser,
-      setMessageUser,
-      login,
-      register,
-      testPython,
-    }),
-    [user, setUser, messageUser, setMessageUser, login, register, testPython]
-  );
-  return (
-    <userContext.Provider value={contextData}>{children}</userContext.Provider>
-  );
 }
 UserContextProvider.propTypes = {
   children: PropTypes.node.isRequired,

@@ -9,13 +9,20 @@ import {
   MDBModalBody,
   MDBModalFooter,
 } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 import { useQuestionContext } from "../../context/QuestionContext";
 
 function QuestionOne() {
+  const navigate = useNavigate();
+
   const { data, setData } = useQuestionContext();
   const [centredModal, setCentredModal] = useState(false);
 
-  const toggleOpen = () => setCentredModal(!centredModal);
+  const toggleOpen = () => setCentredModal(true);
+  const toggleClose = () => {
+    setCentredModal(false);
+    navigate("/results");
+  };
 
   return (
     <div>
@@ -64,7 +71,7 @@ function QuestionOne() {
               <MDBBtn
                 className="btn-pas-produit"
                 color="secondary"
-                onClick={toggleOpen}
+                onClick={toggleClose}
               >
                 FERMER
               </MDBBtn>
