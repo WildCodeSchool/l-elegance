@@ -12,6 +12,7 @@ import UserContextProvider from "./context/UserContext";
 import Resultats from "./pages/Resultats";
 // import Contact from "./pages/Contact";
 import Inscription from "./pages/Inscription";
+import Page1 from "./pages/Page1";
 
 const router = createBrowserRouter([
   {
