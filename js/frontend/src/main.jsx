@@ -5,12 +5,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 
-import "mdb-react-ui-kit/dist/scss/mdb.dark.scss";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Home from "./pages/Home";
 import Page1 from "./pages/Page1";
 import UserContextProvider from "./context/UserContext";
 import Stepper from "./pages/Stepper";
+import QuestionContextProvider from "./context/QuestionContext";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/stepper",
-        element: <Stepper />,
+        element: (
+          <QuestionContextProvider>
+            <Stepper />
+          </QuestionContextProvider>
+        ),
       },
     ],
   },
