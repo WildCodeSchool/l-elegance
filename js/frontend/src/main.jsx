@@ -12,6 +12,7 @@ import UserContextProvider from "./context/UserContext";
 import Resultats from "./pages/Resultats";
 // import Contact from "./pages/Contact";
 import Inscription from "./pages/Inscription";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -34,10 +35,10 @@ const router = createBrowserRouter([
         path: "/home",
         element: <Home />,
       },
-      // {
-      //   path: "/contact",
-      //   element: <Contact />,
-      // },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
       {
         path: "/inscription",
         element: <Inscription />,

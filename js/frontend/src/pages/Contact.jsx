@@ -1,71 +1,93 @@
-// import React from "react";
-// import {
-//   MDBBtn,
-//   MDBCheckbox,
-//   MDBRadio,
-//   MDBTextArea,
-//   MDBValidation,
-//   MDBValidationItem,
-// } from "mdb-react-ui-kit";
+import React, { useState } from "react";
+import {
+  MDBInput,
+  MDBBtn,
+  MDBCheckbox,
+  MDBRow,
+  MDBCol,
+} from "mdb-react-ui-kit";
 
-// export default function Contact() {
-//   return (
-//     <MDBValidation isValidated>
-//       <MDBValidationItem
-//         className="mb-3 pb-1"
-//         feedback="Please enter a message in the textarea."
-//         invalid
-//       >
-//         <MDBTextArea
-//           label="Textarea"
-//           id="validationTextarea"
-//           placeholder="Required example textarea"
-//           required
-//         />
-//       </MDBValidationItem>
-//       <MDBValidationItem
-//         className="mb-2 pb-1"
-//         invalid
-//         feedback="Example invalid feedback text."
-//       >
-//         <MDBCheckbox
-//           label="Check this checkbox"
-//           id="validationFormCheck1"
-//           required
-//         />
-//       </MDBValidationItem>
-//       <MDBRadio
-//         label="Toggle this radio"
-//         required
-//         id="validationFormCheck2"
-//         name="radio-stacked"
-//       />
-//       <MDBValidationItem invalid feedback="More example invalid feedback text.">
-//         <MDBRadio
-//           label="Or toggle this other radio"
-//           required
-//           id="validationFormCheck3"
-//           name="radio-stacked"
-//         />
-//       </MDBValidationItem>
+export default function Contact() {
+  const [formValue, setFormValue] = useState({
+    fname: "Mark",
+    lname: "Otto",
+    email: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
 
-//       <MDBValidationItem
-//         className="mt-3 mb-5"
-//         feedback="Example invalid form file feedback"
-//         invalid
-//       >
-//         <input
-//           type="file"
-//           className="form-control"
-//           aria-label="file example"
-//           required
-//         />
-//       </MDBValidationItem>
-//       <div>
-//         <MDBBtn type="submit" disabled>
-//           Submit form
-//         </MDBBtn>
-//       </div>
-//     </MDBValidation>
-//   );
-// }
+  const onChange = (e) => {
+    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <MDBRow tag="form" className="g-3">
+      <MDBCol md="4">
+        <MDBInput
+          value={formValue.fname}
+          name="fname"
+          onChange={onChange}
+          id="validationCustom01"
+          required
+          label="First name"
+        />
+      </MDBCol>
+      <MDBCol md="4">
+        <MDBInput
+          value={formValue.lname}
+          name="lname"
+          onChange={onChange}
+          id="validationCustom02"
+          required
+          label="Last name"
+        />
+      </MDBCol>
+      <MDBCol md="4">
+        <div className="input-group has-validation">
+          <span className="input-group-text" id="inputGroupPrepend">
+            @
+          </span>
+          <input
+            type="text"
+            className="form-control"
+            id="validationCustomUsername"
+            placeholder="Username"
+            required
+          />
+          <div className="invalid-feedback">Please choose a username.</div>
+        </div>
+      </MDBCol>
+      <MDBCol md="6">
+        <MDBInput
+          value={formValue.city}
+          name="city"
+          onChange={onChange}
+          id="validationCustom03"
+          required
+          label="City"
+        />
+      </MDBCol>
+      <MDBCol md="6">
+        <MDBInput
+          value={formValue.zip}
+          name="zip"
+          onChange={onChange}
+          id="validationCustom05"
+          required
+          label="Zip"
+        />
+      </MDBCol>
+      <MDBCol size="12">
+        <MDBCheckbox
+          label="Agree to terms and conditions"
+          id="invalidCheck2"
+          required
+        />
+      </MDBCol>
+      <MDBCol size="12">
+        <MDBBtn type="submit">Submit form</MDBBtn>
+      </MDBCol>
+    </MDBRow>
+  );
+}
