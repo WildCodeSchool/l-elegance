@@ -1,13 +1,31 @@
+import React, { useState } from "react";
 import Bandeau from "../components/Bandeau";
 import InfoPharma from "../components/InfoPharma";
 import Nav from "../components/Nav";
 import Card from "../components/Card";
+import Slider from "../components/Slider";
+import Modale from "../components/Modale pop up/Modale";
+// Import de Context.
 import { useQuestionContext } from "../context/QuestionContext";
 
 function Resultats() {
   const { products } = useQuestionContext();
   console.log(products);
   const resCut = products.slice(0, 5);
+
+  const [pop, setPop] = useState(false);
+  const [displayPop, setDisplayPop] = useState(false);
+
+  const handleActive = () => {};
+
+  const handleClose = () => {
+      setDisplayPop(!displayPop);
+      setPop(!pop);
+    //   setTimeout(() => {
+          //     setPop(false);
+    // }, 500);
+  };
+
   return (
     <>
       <Nav />
@@ -32,7 +50,8 @@ function Resultats() {
       <div className="container container-resultat">
         <div className="resultat">
           {resCut.map(ele => (<div><Card name={ele.name} details={ele.details} image_url={ele.image_url} /> <InfoPharma /></div>))}
-
+          <Slider />
+          {displayPop && <Modale pop={pop} handleClose={handleClose} />}
         </div>
 
 
