@@ -26,11 +26,13 @@ export default function InscriptionCo() {
         firstname: '',
         lastname: '',
         city: '',
-        birthday: ''
+        birthday: '',
+        profession: ""
     });
 
     const onChange = (e) => {
         setFormValue({ ...formValue, [e.target.name]: e.target.value });
+        console.log(formValue);
     };
 
     async function handleSubmit() {
@@ -128,6 +130,16 @@ export default function InscriptionCo() {
                         required
                         label='Ville'
                     />
+                </MDBValidationItem>
+                <MDBValidationItem>
+                    <select className="form-select" value={formValue.profession} aria-label="Default select example" name="profession" onChange={onChange}>
+                        <option selected value="">Votre profession</option>
+                        <option value="commerce">Commerce</option>
+                        <option value="education">Education</option>
+                        <option value="medical">Médical</option>
+                        <option value="sport">Sport</option>
+                        <option value="FAF">Sans travail</option>
+                    </select>
                 </MDBValidationItem>
 
                 <div className='col-12'>
