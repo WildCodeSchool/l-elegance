@@ -2,7 +2,7 @@ import Bandeau from "../components/Bandeau";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
-function Resultats() {
+function Home() {
   return (
     <>
       <Nav />
@@ -54,4 +54,5 @@ function Resultats() {
   );
 }
 
-export default Resultats;
+export default Home;
+

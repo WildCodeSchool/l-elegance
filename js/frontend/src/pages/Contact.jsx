@@ -6,6 +6,7 @@ import {
   MDBRow,
   MDBCol,
 } from "mdb-react-ui-kit";
+import Nav from "../components/Nav";
 
 export default function Contact() {
   const [formValue, setFormValue] = useState({
