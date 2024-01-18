@@ -8,10 +8,15 @@ import App from "./App";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Home from "./pages/Home";
-import Page1 from "./pages/Page1";
 import UserContextProvider from "./context/UserContext";
+<<<<<<< HEAD
 import Stepper from "./pages/Stepper";
 import QuestionContextProvider from "./context/QuestionContext";
+=======
+import Resultats from "./pages/Resultats";
+// import Contact from "./pages/Contact";
+import Inscription from "./pages/Inscription";
+>>>>>>> 2dae0ac3fc30a4839df9d1e5318de2cb988e14ea
 
 const router = createBrowserRouter([
   {
@@ -28,6 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/page1",
+<<<<<<< HEAD
         element: <Page1 />,
       },
       {
@@ -37,6 +43,21 @@ const router = createBrowserRouter([
             <Stepper />
           </QuestionContextProvider>
         ),
+=======
+        element: <Resultats />,
+      },
+      {
+        path: "/home",
+        element: <Home />,
+      },
+      // {
+      //   path: "/contact",
+      //   element: <Contact />,
+      // },
+      {
+        path: "/inscription",
+        element: <Inscription />,
+>>>>>>> 2dae0ac3fc30a4839df9d1e5318de2cb988e14ea
       },
     ],
   },
