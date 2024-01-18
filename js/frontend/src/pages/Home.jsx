@@ -1,6 +1,7 @@
 import Bandeau from "../components/Bandeau";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import Modale from "../components/Modale pop up/Modale";
 
 function Home() {
   return (
@@ -49,10 +50,10 @@ function Home() {
           <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
         </div>
       </div>
+      <Modale />
       <Footer />
     </>
   );
 }
 
 export default Home;
-
