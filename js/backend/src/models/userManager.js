@@ -17,14 +17,15 @@ class UserManager {
         const hashedPassword = await this.Hashing(user.password);
         try {
             const [result] = await database.query(
-                `insert into user (firstname, lastname, email, password, birthday, city) values (?,?,?,?,?,?)`,
+                `insert into user (firstname, lastname, email, password, birthday, city,profession) values (?,?,?,?,?,?,?)`,
                 [
                     user.firstname,
                     user.lastname,
                     user.email,
                     hashedPassword,
                     user.birthday,
-                    user.city
+                    user.city,
+                    user.profession
                 ]
             );
             return { message: "Utilisateur ajouté!!!", insertId: result.insertId };
