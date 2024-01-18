@@ -33,49 +33,59 @@ function Stepper() {
   }
 
   return (
+    <>
 
-    <div className="w-100">
 
-      <div className="grid">
-        <div>
-          <MDBStepper disableHeadSteps externalNext={nextRef} externalPrev={prevRef} type="vertical">
-            <MDBStepperStep headIcon={1} headText="step 1" itemId={1}>
+      <div id="inscription">
+        <div className="hero">
+          <div className="step">
+            <MDBStepper disableHeadSteps externalNext={nextRef} externalPrev={prevRef} type="vertical">
+              <MDBStepperStep headIcon={1} headText="step 1" itemId={1}>
 
-            </MDBStepperStep>
-            <MDBStepperStep headIcon={2} headText="step 2" itemId={2}>
+              </MDBStepperStep>
+              <MDBStepperStep headIcon={2} headText="step 2" itemId={2}>
 
-            </MDBStepperStep>
-            <MDBStepperStep headIcon={3} headText="step 3" itemId={3}>
+              </MDBStepperStep>
+              <MDBStepperStep headIcon={3} headText="step 3" itemId={3}>
 
-            </MDBStepperStep>
-            <MDBStepperStep headIcon={4} headText="step 4" itemId={4}>
+              </MDBStepperStep>
+              <MDBStepperStep headIcon={4} headText="step 4" itemId={4}>
 
-            </MDBStepperStep>
-            <MDBStepperStep headIcon={5} headText="step 5" itemId={5}>
+              </MDBStepperStep>
+              <MDBStepperStep headIcon={5} headText="step 5" itemId={5}>
 
-            </MDBStepperStep>
-            <MDBStepperStep headIcon={6} headText="step 6" itemId={6}>
+              </MDBStepperStep>
+              <MDBStepperStep headIcon={6} headText="step 6" itemId={6}>
 
-            </MDBStepperStep>
+              </MDBStepperStep>
 
-          </MDBStepper>
+            </MDBStepper>
+          </div>
+          <div className="logo">
+            <img src="../src/assets/logo.png" alt="" />
+          </div>
         </div>
-        <div className="question">
-          {currentQuestion === 1 && <QuestionOne />}
-          {currentQuestion === 2 && <QuestionTwo />}
-          {currentQuestion === 3 && <QuestionTree />}
-          {currentQuestion === 4 && <QuestionFour />}
-          {currentQuestion === 5 && <QuestionFive />}
-          {currentQuestion === 6 && <QuestionSix />}
+        <div className="formulaire">
+          <div className="formulaire-interieur">
+            <h5 className="vous">EN SAVOIR PLUS SUR VOUS</h5>
+            <h3 className="questio-title">Prenez quelques minutes pour repondre à notre questionnaire</h3>
+            <div className="question">
+              {currentQuestion === 1 && <QuestionOne />}
+              {currentQuestion === 2 && <QuestionTwo />}
+              {currentQuestion === 3 && <QuestionTree />}
+              {currentQuestion === 4 && <QuestionFour />}
+              {currentQuestion === 5 && <QuestionFive />}
+              {currentQuestion === 6 && <QuestionSix />}
 
-          <div className="mb-3">
-            <MDBBtn onClick={prevQuestion} ref={prevRef}>PREV</MDBBtn>
-            {currentQuestion === 6 ? <MDBBtn type="button" onClick={console.log(data)}>envoyer</MDBBtn> : <MDBBtn onClick={nextQuestion} ref={nextRef}>NEXT</MDBBtn>}
+            </div>
+            <div className="mb-3 btn-container">
+              <MDBBtn className="question-btn" onClick={prevQuestion} ref={prevRef}>précédent</MDBBtn>
+              {currentQuestion === 6 ? <MDBBtn className="question-btn next" type="button" onClick={console.log(data)}>envoyer</MDBBtn> : <MDBBtn className="question-btn next" onClick={nextQuestion} ref={nextRef}>suivant</MDBBtn>}
+            </div>
           </div>
         </div>
       </div>
-    </div >
-
+    </>
   );
 }
 
