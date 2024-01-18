@@ -5,14 +5,14 @@ function QuestionOne() {
   const { data, setData } = useQuestionContext();
   return (
     <div>
-      <h4> Avez-vous un Cancer de la peau?</h4>
+      <h4 className='answer-title'> Avez-vous un Cancer de la peau?</h4>
 
-      <div >
+      <div className='answer'>
         <div>
-          <button type='button' onClick={() => setData({ ...data, cancer: true })}>oui</button>
+          <button type='button' className={`answer-btn ${data.cancer ? "active" : ''}`} onClick={() => setData({ ...data, cancer: true })}>Oui</button>
         </div>
         <div>
-          <button type='button' onClick={() => setData({ ...data, cancer: false })}>non</button>
+          <button type='button' className={`answer-btn ${data.cancer === false ? "active" : ''}`} onClick={() => setData({ ...data, cancer: false })}>Non</button>
         </div>
       </div >
     </div>
