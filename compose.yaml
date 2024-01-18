@@ -40,7 +40,7 @@ services:
     ports:
       # HTTP
       - target: 5000
-        published: 8501
+        published: 5000
         protocol: tcp
 
   database:

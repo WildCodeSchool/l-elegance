@@ -20,11 +20,12 @@ def hello():
 
 @app.route('/api/<uuid>', methods=['GET', 'POST'])
 def add_message(uuid):
+    print (uuid)
     content = request.get_json()
 
     #####
+    df = pd.read_csv('./df_final.csv')
 
-    df = pd.read_csv('df_final.csv')
     df_tri = tri(content, df)
     df_tri.to_json("df_tri.json",orient = "records",force_ascii=False)
 
