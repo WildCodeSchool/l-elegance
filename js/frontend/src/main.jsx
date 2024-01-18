@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/page1",
-        element: <Page1 />,
+        element: <Resultats />,
       },
       {
         path: "/stepper",
@@ -39,7 +39,6 @@ const router = createBrowserRouter([
             <Stepper />
           </QuestionContextProvider>
         ),
-        element: <Resultats />,
       },
       {
         path: "/home",
