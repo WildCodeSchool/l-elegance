@@ -9,6 +9,8 @@ import "mdb-react-ui-kit/dist/scss/mdb.dark.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Home from "./pages/Home";
 import UserContextProvider from "./context/UserContext";
+import Stepper from "./pages/Stepper";
+import QuestionContextProvider from "./context/QuestionContext";
 import Resultats from "./pages/Resultats";
 import Inscription from "./pages/Inscription";
 
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: "/page1",
         element: <Resultats />,
+      },
+      {
+        path: "/stepper",
+        element: (
+          <QuestionContextProvider>
+            <Stepper />
+          </QuestionContextProvider>
+        ),
       },
       {
         path: "/home",
