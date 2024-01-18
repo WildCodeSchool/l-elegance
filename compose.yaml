@@ -39,7 +39,7 @@ services:
     tty: true
     ports:
       # HTTP
-      - target: 8501
+      - target: 5000
         published: 8501
         protocol: tcp
 

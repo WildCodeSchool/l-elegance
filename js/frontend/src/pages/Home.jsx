@@ -8,7 +8,6 @@ function Home() {
         <>
             <Nav />
             <Bandeau />
-            <Inscription />
             <div className="text-resultat">
                 <div className="container">
                     <h2>LE CONCEPT</h2>

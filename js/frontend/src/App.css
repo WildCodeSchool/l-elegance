@@ -329,10 +329,18 @@ body {
   }
 
   .container-nav {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 200%;
+  }
+  .underline-nav{
+    height: 1px;
     width: 100%;
+    position: absolute;
+    top: 120px;
+    background-color: rgba(255, 255, 255, 0.25);
   }
 
   .container-info-pharma {
@@ -403,35 +411,9 @@ body {
   }
 }
 
-
-.mahdi{
-  border: none !important;
+.navbar-link{
+  color: rgb(219, 218, 218);
 }
-.mahdi:focus{
-  border: none !important;
-}
-.mahdi::selection{
-  border: none !important;
-}
-#validationCustomUsername{
-  border: none !important;
-  filter: drop-shadow(0 0 8px black);
-  outline: none !important;
-
-}
-#validationCustomUsername:focus{
-  border: none !important;
-  filter: drop-shadow(0 0 4px black);
-  outline: none !important;
-
-}
-#validationCustomUsername:focus-visible{
-  border: none !important;
-  filter: drop-shadow(0 0 4px black);
-  outline: none !important;
-
-}
-#validationCustomUsername:focus-within{
-  filter: drop-shadow(0 0 4px black);
-  outline: none !important;
+.navbar-link:hover, .navbar-link:scope{
+  color: white;
 }

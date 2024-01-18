@@ -4,7 +4,6 @@ import Connexion from "./Connexion";
 export default function Inscription() {
   return (
     <div id="inscription">
-      <Connexion />
       <div className="hero">
         <div />
         <div>
