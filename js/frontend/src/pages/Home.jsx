@@ -1,7 +1,11 @@
 import Bandeau from "../components/Bandeau";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+<<<<<<< HEAD
 import Inscription from "./Inscription";
+=======
+import Modale from "../components/Modale pop up/Modale";
+>>>>>>> 6350fc4e2fbf41d3182de1f8f84bf76813dff7e9
 
 function Home() {
     return (
@@ -46,6 +50,7 @@ function Home() {
                     </button>
                 </div>
 
+<<<<<<< HEAD
                 <div className="container-img-presentation">
                     <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
                 </div>
@@ -53,7 +58,16 @@ function Home() {
             <Footer />
         </>
     );
+=======
+        <div className="container-img-presentation">
+          <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
+        </div>
+      </div>
+      <Modale />
+      <Footer />
+    </>
+  );
+>>>>>>> 6350fc4e2fbf41d3182de1f8f84bf76813dff7e9
 }
 
 export default Home;
-
