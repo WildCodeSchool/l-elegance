@@ -12,11 +12,11 @@ function Home() {
   const handleActive = () => {};
 
   const handleClose = () => {
-    setDisplayPop(!displayPop);
-    setPop(!pop);
-    // setTimeout(() => {
-    //     setPop(false);
-    // }, 3000);
+      setDisplayPop(false);
+      setPop(!pop);
+    //   setTimeout(() => {
+          //     setPop(false);
+    // }, 500);
   };
 
   return (

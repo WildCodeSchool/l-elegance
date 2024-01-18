@@ -59,8 +59,9 @@ function Modale({ pop, handleClose }) {
   const [rotateArrow, setRotateArrow] = useState(false);
 
   const showUnshow = () => {
-    setContent(!contents);
-    setRotateArrow(!rotateArrow);
+      setRotateArrow(!rotateArrow);
+      
+      setContent(!contents);
   };
 
   return (
