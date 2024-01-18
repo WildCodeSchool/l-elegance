@@ -92,6 +92,10 @@ body {
   color: red;
 }
 
+label {
+  background-color: red;
+}
+
 /* Info pharma */
 .container-info-pharma {
   background-color: #fcfaf6;

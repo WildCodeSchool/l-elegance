@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 function Home() {
   return (
     <>
-      <Nav />
       <Bandeau />
       <div className="text-resultat">
         <div className="container">
@@ -49,10 +48,8 @@ function Home() {
           <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
 
 export default Home;
-

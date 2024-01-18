@@ -11,8 +11,10 @@ import Home from "./pages/Home";
 import UserContextProvider from "./context/UserContext";
 import Resultats from "./pages/Resultats";
 // import Contact from "./pages/Contact";
-import Inscription from "./pages/Inscription";
+import Inscription from "./pages/InscriptionPage";
 import Contact from "./pages/Contact";
+import InscriptionPage from "./pages/InscriptionPage";
+import Formulaire from "./components/Formulaire";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/inscription",
-        element: <Inscription />,
+        element: <InscriptionPage />,
+      },
+      {
+        path: "/formulaire",
+        element: <Formulaire />,
       },
     ],
   },
