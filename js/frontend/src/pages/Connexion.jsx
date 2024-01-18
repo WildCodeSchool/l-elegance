@@ -37,12 +37,13 @@ export default function Connexion() {
     return (
         <MDBValidation className='row g-3' >
 
+
             <MDBValidationItem feedback='Please choose a username.' invalid className='col-md-4'>
-                <MDBInputGroup textBefore='@'>
+                <MDBInputGroup textBefore='@' className='mahdi'>
                     <MDBInput
                         type='email'
                         value={formValue.email}
-                        className='form-control'
+                        className='form-control mahdi'
                         id='validationCustomUsername'
                         placeholder='email'
                         required
@@ -53,7 +54,7 @@ export default function Connexion() {
                 </MDBInputGroup>
             </MDBValidationItem>
 
-            <MDBValidationItem className='col-md-6' feedback='Please provide a valid zip.' invalid>
+            <MDBValidationItem className='col-md-6' feedback='Mot de passe obligatoire' invalid>
                 <MDBInput
                     type="password"
                     value={formValue.password}
@@ -67,6 +68,7 @@ export default function Connexion() {
             <div className='col-12'>
                 <MDBBtn type='button' onClick={handleSubmit}>Submit form</MDBBtn>
             </div>
+
         </MDBValidation>
     );
 }

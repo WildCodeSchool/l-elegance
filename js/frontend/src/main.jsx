@@ -12,7 +12,6 @@ import UserContextProvider from "./context/UserContext";
 import Stepper from "./pages/Stepper";
 import QuestionContextProvider from "./context/QuestionContext";
 import Resultats from "./pages/Resultats";
-// import Contact from "./pages/Contact";
 import Inscription from "./pages/Inscription";
 
 const router = createBrowserRouter([
