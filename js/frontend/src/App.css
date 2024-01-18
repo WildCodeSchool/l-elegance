@@ -67,19 +67,22 @@ body {
 }
 
 .btn-more-round {
-  background-color: #cdc4ba;
+  background-color: black;
+  color: white;
   border: 1px solid #cdc4ba;
   padding: 8px 30px;
   font-family: "Inria Sans";
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 20px;
-  transition: transform 0.3s ease;
-  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  text-transform: uppercase;
+  /* border-radius: 50px; */
 }
 
 .btn-more-round:hover {
   transform: scale(0.98);
-  background-color: #cdc4ba;
+  border-radius: #cdc4ba;
+ 
 }
 .btn-more:hover {
   transform: scale(0.98);
@@ -151,10 +154,11 @@ body {
 .adresse-pharma h4 {
   padding-left: 10px;
 }
-/* Footer */
+
 .footer {
-  background-color: #3d3d3d;
-  padding: 50px 0;
+  background-color: white;
+  border-top: 1px solid #e9e6e0;
+  padding: 40px 0 20px;
   text-align: center;
 }
 
@@ -167,7 +171,7 @@ body {
 .text-resultat {
   color: #3d3d3d;
   text-align: center;
-  background-color: #fcfaf6;
+  background-color: #e9e6e0;
   padding: 70px 10px;
 }
 
@@ -261,11 +265,18 @@ body {
   margin-top: 70px;
 }
 
-/* Card */
+.footer-container .img-fluid {
+  width: 30%;
+}
+
+section .mb-4{
+  margin: 0 !important;
+}
+
+
 @media all and (min-width: 1000px) {
   .container-card {
     display: flex;
-    /* background-color: red; */
   }
 
   .text-card {
@@ -409,6 +420,26 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+  .footer-container .img-fluid {
+    width: 25%;
+    display: flex;
+
+  }
+
+  .logos{
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .navbar-link{
@@ -425,4 +456,7 @@ body {
 .adam{
   display: block;
   margin: 0 auto;
+}
+.mahdi{
+  text-decoration: underline;
 }

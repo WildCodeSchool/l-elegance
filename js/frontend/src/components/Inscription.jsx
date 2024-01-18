@@ -99,7 +99,7 @@ export default function InscriptionCo() {
                         name='confirmPassword'
                         id='validationCustom05'
                         required
-                        label='Mot de passe'
+                        label='Confirmer le mot de passe'
                     />
                 </MDBValidationItem>
 

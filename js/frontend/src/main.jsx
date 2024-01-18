@@ -13,6 +13,7 @@ import Stepper from "./pages/Stepper";
 import QuestionContextProvider from "./context/QuestionContext";
 import Resultats from "./pages/Resultats";
 import Inscription from "./pages/Inscription";
+import Connexion from "./pages/Connexion";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/page1",
-        element: <Resultats />,
+        path: "/results",
+
+        element: <QuestionContextProvider>
+          <Resultats />
+        </QuestionContextProvider>,
       },
       {
         path: "/stepper",
@@ -50,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/inscription",
         element: <Inscription />,
+      },
+      {
+        path: "/connexion",
+        element: <Connexion />,
       },
     ],
   },

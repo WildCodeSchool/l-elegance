@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { MDBBtn, MDBStepper, MDBStepperStep } from "mdb-react-ui-kit";
+import { MDBBtn, MDBSpinner, MDBStepper, MDBStepperStep } from "mdb-react-ui-kit";
 import "./stepper.css"
 import QuestionOne from "../components/stepperQuestion/QuestionOne";
 import QuestionTwo from "../components/stepperQuestion/QuestionTwo";
@@ -7,17 +7,16 @@ import QuestionTree from "../components/stepperQuestion/QuestionTree";
 import QuestionFour from "../components/stepperQuestion/QuestionFour";
 import QuestionFive from "../components/stepperQuestion/QuestionFive";
 import QuestionSix from "../components/stepperQuestion/QuestionSix";
-import QuestionSeven from "../components/stepperQuestion/QuestionSeven";
 import { useQuestionContext } from "../context/QuestionContext";
-import QuestionTreeA from "../components/stepperQuestion/QuestionTreeA";
-import QuestionTreeB from "../components/stepperQuestion/QuestionTreeB";
-import QuestionTreeC from "../components/stepperQuestion/QuestionTreeC";
+import { useNavigate } from "react-router-dom";
 
 function Stepper() {
-  const { data } = useQuestionContext();
+  const [wait, setWait] = useState(false);
+  const { sendSurvey } = useQuestionContext();
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const nextRef = useRef(null);
   const prevRef = useRef(null);
+  const navigate = useNavigate();
 
   const nextQuestion = () => {
     if (currentQuestion < 7) {
@@ -32,6 +31,16 @@ function Stepper() {
     }
   }
 
+  async function handleSubmit() {
+    await sendSurvey();
+    setWait(true);
+    await new Promise(e => setTimeout(e, 3000));
+    navigate("/results");
+  }
+
+  const loading = <MDBSpinner role="status" size="sml">
+    <span className="visually-hidden">loading...</span>
+  </MDBSpinner>
   return (
     <>
 
@@ -40,22 +49,21 @@ function Stepper() {
         <div className="hero">
           <div className="step">
             <MDBStepper disableHeadSteps externalNext={nextRef} externalPrev={prevRef} type="vertical">
-              <MDBStepperStep headIcon={1} headText="step 1" itemId={1}>
+              <MDBStepperStep headText="VOTRE PROFIL" itemId={1} customValidation="none">
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={2} headText="step 2" itemId={2}>
+              <MDBStepperStep headText="VOS TRAITEMENTS" itemId={2}>
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={3} headText="step 3" itemId={3}>
+              <MDBStepperStep headText="EFFETS SECONDAIRES" itemId={3}>
+              </MDBStepperStep>
+              <MDBStepperStep headText="ALOPÉCIE" itemId={4}>
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={4} headText="step 4" itemId={4}>
+              <MDBStepperStep headText="ALLERGIES " itemId={5}>
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={5} headText="step 5" itemId={5}>
-
-              </MDBStepperStep>
-              <MDBStepperStep headIcon={6} headText="step 6" itemId={6}>
+              <MDBStepperStep headText="HYPEROSMIEs" itemId={6}>
 
               </MDBStepperStep>
 
@@ -79,8 +87,8 @@ function Stepper() {
 
             </div>
             <div className="mb-3 btn-container">
-              <MDBBtn className="question-btn" onClick={prevQuestion} ref={prevRef}>précédent</MDBBtn>
-              {currentQuestion === 6 ? <MDBBtn className="question-btn next" type="button" onClick={console.log(data)}>envoyer</MDBBtn> : <MDBBtn className="question-btn next" onClick={nextQuestion} ref={nextRef}>suivant</MDBBtn>}
+              {currentQuestion === 1 ? "" : <MDBBtn className="question-btn" onClick={prevQuestion} ref={prevRef}>précédent</MDBBtn>}
+              {currentQuestion === 6 ? <MDBBtn className="question-btn next" type="button" onClick={handleSubmit}>{wait ? loading : "envoyer"}</MDBBtn> : <MDBBtn className="question-btn next" onClick={nextQuestion} ref={nextRef}>suivant</MDBBtn>}
             </div>
           </div>
         </div>
