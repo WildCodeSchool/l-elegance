@@ -9,7 +9,7 @@ function QuestionTree() {
   return (
     <>
       <div>
-        Avez-vous actuellement des problèmes cutanés liés à votre traitement contre le cancer ?
+        <h4 className='answer-title'>Avez-vous actuellement des problèmes cutanés liés à votre traitement contre le cancer ? </h4>
       </div>
       <div>
         {data.chimio === true && <QuestionTreeA />}

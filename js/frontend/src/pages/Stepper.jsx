@@ -7,11 +7,7 @@ import QuestionTree from "../components/stepperQuestion/QuestionTree";
 import QuestionFour from "../components/stepperQuestion/QuestionFour";
 import QuestionFive from "../components/stepperQuestion/QuestionFive";
 import QuestionSix from "../components/stepperQuestion/QuestionSix";
-import QuestionSeven from "../components/stepperQuestion/QuestionSeven";
 import { useQuestionContext } from "../context/QuestionContext";
-import QuestionTreeA from "../components/stepperQuestion/QuestionTreeA";
-import QuestionTreeB from "../components/stepperQuestion/QuestionTreeB";
-import QuestionTreeC from "../components/stepperQuestion/QuestionTreeC";
 
 function Stepper() {
   const { data } = useQuestionContext();
@@ -40,22 +36,21 @@ function Stepper() {
         <div className="hero">
           <div className="step">
             <MDBStepper disableHeadSteps externalNext={nextRef} externalPrev={prevRef} type="vertical">
-              <MDBStepperStep headIcon={1} headText="step 1" itemId={1}>
+              <MDBStepperStep headText="VOTRE PROFIL" itemId={1} customValidation="none">
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={2} headText="step 2" itemId={2}>
+              <MDBStepperStep headText="VOS TRAITEMENTS" itemId={2}>
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={3} headText="step 3" itemId={3}>
+              <MDBStepperStep headText="EFFETS SECONDAIRES" itemId={3}>
+              </MDBStepperStep>
+              <MDBStepperStep headText="ALOPÉCIE" itemId={4}>
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={4} headText="step 4" itemId={4}>
+              <MDBStepperStep headText="ALLERGIES " itemId={5}>
 
               </MDBStepperStep>
-              <MDBStepperStep headIcon={5} headText="step 5" itemId={5}>
-
-              </MDBStepperStep>
-              <MDBStepperStep headIcon={6} headText="step 6" itemId={6}>
+              <MDBStepperStep headText="HYPEROSMIEs" itemId={6}>
 
               </MDBStepperStep>
 
@@ -79,7 +74,7 @@ function Stepper() {
 
             </div>
             <div className="mb-3 btn-container">
-              <MDBBtn className="question-btn" onClick={prevQuestion} ref={prevRef}>précédent</MDBBtn>
+              {currentQuestion === 1 ? "" : <MDBBtn className="question-btn" onClick={prevQuestion} ref={prevRef}>précédent</MDBBtn>}
               {currentQuestion === 6 ? <MDBBtn className="question-btn next" type="button" onClick={console.log(data)}>envoyer</MDBBtn> : <MDBBtn className="question-btn next" onClick={nextQuestion} ref={nextRef}>suivant</MDBBtn>}
             </div>
           </div>

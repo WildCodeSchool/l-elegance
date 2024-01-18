@@ -5,7 +5,7 @@ const questionContext = createContext();
 
 export default function QuestionContextProvider({ children }) {
   const [data, setData] = useState({
-    cancer: false,
+    cancer: null,
 
     chimio: false,
     radio: false,
@@ -24,17 +24,14 @@ export default function QuestionContextProvider({ children }) {
     psoriasis: false,
     herpes: false,
 
-    alopecie: false,
+    alopecie: null,
 
-    allergie: false,
+    allergie: null,
 
-    odora: false,
+    odora: null,
   })
 
 
-  //   const handleChangeData = () => {
-  //     ...data, {[e.target.name]: setData(!data.cancer)}
-  // }
 
   const contextData = useMemo(
     () => ({ data, setData }), [data, setData]
