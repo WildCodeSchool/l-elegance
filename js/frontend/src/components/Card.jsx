@@ -1,9 +1,10 @@
 function Card() {
   return (
-    <div className=" container container-card">
-      <div className="container-card-img">
-        <img className="img-fluid " src="./src/assets/img-basic.jpg" alt="" />
-      </div>
+    <div className="container container-card">
+      <div
+        className="container-card-img"
+        style={{ backgroundImage: "url('./src/assets/img-basic.png')" }}
+      />
       <div className="text-card">
         <h2>Age Perfect Renaissance Cellulaire Midnight Sérum - 30ml</h2>
         <p>

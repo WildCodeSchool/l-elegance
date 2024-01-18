@@ -1,6 +1,6 @@
 function InfoPharma() {
   return (
-    <div className=" info-pharma ">
+    <div className="info-pharma">
       <h2>Où trouver ce produit ?</h2>
       <div>
         <h3>Aprium Pharmacie Vergnet Blandeau</h3>

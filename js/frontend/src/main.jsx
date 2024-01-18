@@ -10,6 +10,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Home from "./pages/Home";
 import UserContextProvider from "./context/UserContext";
 import Resultats from "./pages/Resultats";
+// import Contact from "./pages/Contact";
+import Inscription from "./pages/Inscription";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      // {
+      //   path: "/contact",
+      //   element: <Contact />,
+      // },
+      {
+        path: "/inscription",
+        element: <Inscription />,
       },
     ],
   },

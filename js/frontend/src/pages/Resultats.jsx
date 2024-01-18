@@ -21,10 +21,12 @@ function Resultats() {
           </p>
         </div>
       </div>
+      <div className="container recommandations">
+        <h3>Nos recommandations pour vous</h3>
+      </div>
 
       <div className="container container-resultat">
         <div className="resultat">
-          <h3>Nos recommandations pour vous</h3>
           <Card />
         </div>
 

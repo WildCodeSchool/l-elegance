@@ -47,6 +47,13 @@ body {
   color: #3d3d3d;
   line-height: 1.5;
 }
+
+.container-card-img {
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
 .btn-more {
   background-color: white;
   border: 1px solid #000;
@@ -55,6 +62,8 @@ body {
   font-size: 20px;
   margin-top: 20px;
   transition: transform 0.3s ease;
+  min-width: 20px;
+  max-width: 200px;
 }
 
 .btn-more-round {
@@ -91,12 +100,18 @@ body {
   padding: 50px 0px;
 }
 
+.info-pharma {
+  background-color: #fcfaf6;
+  padding: 50px 10px;
+}
 .info-pharma h2 {
   font-family: "Inria Sans";
 }
 .info-pharma h3 {
   font-family: "Noto Sans";
   font-size: 16px;
+  font-weight: 700;
+  margin-top: 30px;
 }
 
 .info-pharma h4 {
@@ -123,9 +138,14 @@ body {
   font-weight: 500;
 }
 
+.recommandations h3 {
+  font-family: "Inria Sans";
+  font-size: 30px;
+}
+
 .adresse-pharma {
   display: flex;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .adresse-pharma h4 {
@@ -148,7 +168,7 @@ body {
   color: #3d3d3d;
   text-align: center;
   background-color: #fcfaf6;
-  padding: 120px 10px;
+  padding: 70px 10px;
 }
 
 .text-resultat h2 {
@@ -166,7 +186,7 @@ body {
 }
 
 .bandeau {
-  background-image: url(assets/img-basic.jpg);
+  background-image: url(assets/img-basic.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -202,6 +222,45 @@ body {
   width: 70%;
 }
 
+#inscription h1,
+#inscription h2 {
+  font-family: "Inria Sans";
+  padding: 50px 0;
+}
+
+#inscription h1 {
+  font-size: 50px;
+  line-height: 0.9em;
+  padding-bottom: 10px;
+}
+
+#inscription h2 {
+  font-size: 30px;
+}
+
+#inscription .hero {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: url("assets/img-basic.png") no-repeat center center/cover;
+  color: white;
+}
+
+#inscription .logo {
+  width: 100px;
+}
+#inscription .logo img {
+  width: 100%;
+  height: auto;
+}
+
+.recommandations {
+  margin-top: 70px;
+}
+
 /* Card */
 @media all and (min-width: 1000px) {
   .container-card {
@@ -219,7 +278,7 @@ body {
 
   .container-resultat {
     display: flex;
-    margin-top: 100px;
+    margin-top: 50px;
     min-height: 400px;
   }
 
@@ -240,7 +299,7 @@ body {
   }
 
   .text-resultat h3 {
-    margin-top: -15px;
+    margin-top: -5px;
   }
   .navigation {
     font-family: "Inria Sans";
@@ -296,9 +355,11 @@ body {
   .info-pharma {
     margin-left: 80px;
     padding: 30px;
-    background-color: #fcfaf6;
     width: 30%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .resultat {
@@ -306,7 +367,7 @@ body {
   }
 
   .container-card-img {
-    width: 100%;
+    width: 400px;
     min-height: 200px;
   }
 
@@ -322,5 +383,22 @@ body {
     flex-direction: column;
     width: 50%;
     margin-right: 50px;
+  }
+
+  #inscription {
+    display: flex;
+    min-height: 100dvh;
+  }
+
+  #inscription .hero {
+    flex: 1;
+    padding: 40px;
+  }
+  #inscription .formulaire {
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

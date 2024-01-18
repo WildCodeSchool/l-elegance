@@ -46,7 +46,7 @@ function Resultats() {
         </div>
 
         <div className="container-img-presentation">
-          <img className="img-fluid" src="../src/assets/img-basic.jpg" alt="" />
+          <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
         </div>
       </div>
       <Footer />
