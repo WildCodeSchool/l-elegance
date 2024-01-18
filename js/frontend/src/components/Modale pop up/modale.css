@@ -1,8 +1,32 @@
+.window-product {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  background-color: #d9d9d9;
+  /* opacity: 0.5; */
+  z-index: 1;
+}
+
 .pop-up-product {
+  /* height: 80vh; */
   width: 80vw;
-  display: block;
-  margin: auto;
+  /* display: flex; */
+  /* margin: auto; */
+  justify-content: center;
+  align-items: center;
   background-color: white;
+}
+
+.pop-up-product.pop-active {
+  animation: show-pop-up 0.2s;
+}
+
+.pop-up-product.pop-unactive {
+  animation: unshow-pop-up 0.2s;
 }
 
 /* BLOCK LEFT. */
@@ -146,5 +170,30 @@
 
   .pop-up-product > .block-right > .title {
     width: 80%;
+  }
+}
+
+@keyframes show-pop-up {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    margin-top: -100px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@keyframes unshow-pop-up {
+  0% {
+    opacity: 0;
+    margin-top: 0px;
+  }
+  100% {
+    opacity: 0;
+    filter: blur(10px);
+    margin-top: -100px;
   }
 }

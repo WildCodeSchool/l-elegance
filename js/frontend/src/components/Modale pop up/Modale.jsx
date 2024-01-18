@@ -54,7 +54,7 @@ const product = [
   },
 ];
 
-function Modale() {
+function Modale({ pop, handleClose }) {
   const [contents, setContent] = useState(false);
   const [rotateArrow, setRotateArrow] = useState(false);
 
@@ -64,36 +64,40 @@ function Modale() {
   };
 
   return (
-    <div className="pop-up-product">
-      <div className="block-left">
-        <img src={product[0].image} />
-      </div>
-      <div className="block-right">
-        <p className="title">{product[0].title}</p>
-        <p className="description">{product[0].description}</p>
-        <div className="which-ingredients">
-          <div className="show-ingredients">
-            <button onClick={showUnshow}>
-              <p>Comment appliquer ce produit ?</p>
-              <img
-                src={rotateArrow ? up : down}
-                alt="Afficher les ingrédients."
-              />
+    <div className="window-product">
+      <div className={`pop-up-product${pop ? " pop-active" : " pop-unactive"}`}>
+        <div className="block-left">
+          <img src={product[0].image} />
+        </div>
+        <div className="block-right">
+          <p className="title">{product[0].title}</p>
+          <p className="description">{product[0].description}</p>
+          <div className="which-ingredients">
+            <div className="show-ingredients">
+              <button onClick={showUnshow}>
+                <p>Comment appliquer ce produit ?</p>
+                <img
+                  src={rotateArrow ? up : down}
+                  alt="Afficher les ingrédients."
+                />
+              </button>
+            </div>
+            {contents && (
+              <div className="ingredients">
+                {product[0].ingredients.map((ingredient) => (
+                  <ul>
+                    <li>{ingredient}</li>
+                  </ul>
+                ))}
+              </div>
+            )}
+            {/* <p className="using">{product[0].ingre}</p> */}
+          </div>
+          <div className="buttons-action">
+            <button onClick={handleClose} className="back-to-diagnostic">
+              Retour au diagnostic.
             </button>
           </div>
-          {contents && (
-            <div className="ingredients">
-              {product[0].ingredients.map((ingredient) => (
-                <ul>
-                  <li>{ingredient}</li>
-                </ul>
-              ))}
-            </div>
-          )}
-          {/* <p className="using">{product[0].ingre}</p> */}
-        </div>
-        <div className="buttons-action">
-          <button className="back-to-diagnostic">Retour au diagnostic.</button>
         </div>
       </div>
     </div>

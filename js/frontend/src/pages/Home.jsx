@@ -1,9 +1,24 @@
+import React, { useState } from "react";
 import Bandeau from "../components/Bandeau";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Modale from "../components/Modale pop up/Modale";
+import Slider from "../components/Slider";
 
 function Home() {
+  const [pop, setPop] = useState(false);
+  const [displayPop, setDisplayPop] = useState(false);
+
+  const handleActive = () => {};
+
+  const handleClose = () => {
+    setDisplayPop(!displayPop);
+    setPop(!pop);
+    // setTimeout(() => {
+    //     setPop(false);
+    // }, 3000);
+  };
+
   return (
     <>
       <Nav />
@@ -50,7 +65,9 @@ function Home() {
           <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
         </div>
       </div>
-      <Modale />
+      <button onClick={handleClose}>Pop up.</button>
+      {displayPop && <Modale pop={pop} handleClose={handleClose} />}
+      <Slider />
       <Footer />
     </>
   );
