@@ -55,7 +55,7 @@ body {
   border-radius: 8px;
 }
 .btn-more {
-  background-color: white !important; 
+  background-color: white !important;
   border: 1px solid #000 !important;
   padding: 8px 30px !important;
   font-family: "Inria Sans" !important;
@@ -63,7 +63,13 @@ body {
   margin-top: 20px;
   transition: transform 0.3s ease;
   min-width: 20px;
-  max-width: 200px;
+  max-width: 250px;
+}
+
+.btn-more:hover {
+  background-color: black !important;
+  border: 1px solid #000 !important;
+  color: white !important;
 }
 
 .btn-more-round {
@@ -82,7 +88,6 @@ body {
 .btn-more-round:hover {
   transform: scale(0.98);
   border-radius: #cdc4ba;
- 
 }
 .btn-more:hover {
   transform: scale(0.98);
@@ -273,10 +278,9 @@ label {
   width: 30%;
 }
 
-section .mb-4{
+section .mb-4 {
   margin: 0 !important;
 }
-
 
 @media all and (min-width: 1000px) {
   .container-card {
@@ -429,11 +433,14 @@ section .mb-4{
   .footer-container .img-fluid {
     width: 25%;
     display: flex;
-
   }
 
-  .logos{
+  .logos {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .bandeau h2 {
+    font-size: 20px;
   }
 }

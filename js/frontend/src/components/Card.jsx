@@ -15,7 +15,7 @@ function Card() {
           nisl semper, id interdum nibh tincidunt.
         </p>
         <button className="btn-more" type="button">
-          Voir le détail
+          VOIR LE DÉTAIL
         </button>
       </div>
     </div>

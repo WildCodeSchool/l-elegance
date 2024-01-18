@@ -10,7 +10,7 @@ function Resultats() {
       <Bandeau />
       <div className="text-resultat">
         <div className="container">
-          <h2>EN SAVOIR PLUS SUR VOUS</h2>
+          <h2>UNE ROUTINE ADAPTÉE A VOTRE PROFIL</h2>
           <h3>Confiez-vous, nous vous guiderons au mieux</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus

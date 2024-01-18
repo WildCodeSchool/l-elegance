@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
 import { MDBBtn, MDBStepper, MDBStepperStep } from "mdb-react-ui-kit";
 import "./stepper.css";
+import "../components/ModalePopUp/modale.css";
+import { useNavigate } from "react-router-dom";
+
 import QuestionOne from "../components/stepperQuestion/QuestionOne";
 import QuestionTwo from "../components/stepperQuestion/QuestionTwo";
 import QuestionTree from "../components/stepperQuestion/QuestionTree";
@@ -10,10 +13,17 @@ import QuestionSix from "../components/stepperQuestion/QuestionSix";
 import { useQuestionContext } from "../context/QuestionContext";
 
 function Stepper() {
+  const navigate = useNavigate();
+
   const { data } = useQuestionContext();
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const nextRef = useRef(null);
   const prevRef = useRef(null);
+
+  const handleButtonClick = () => {
+    // Utiliser la fonction navigate pour spécifier la nouvelle URL
+    navigate("/");
+  };
 
   const nextQuestion = () => {
     if (currentQuestion < 7) {
@@ -66,7 +76,10 @@ function Stepper() {
         </div>
       </div>
       <div className="formulaire">
+        <div></div>
+
         <div className="formulaire-interieur">
+          <button onClick={handleButtonClick}> Coucou</button>
           <h5 className="vous">EN SAVOIR PLUS SUR VOUS</h5>
           <h3 className="questio-title">
             Prenez quelques minutes pour repondre à notre questionnaire
