@@ -1,74 +1,30 @@
-import React, { useState } from 'react';
-import {
-    MDBInput,
-    MDBInputGroup,
-    MDBBtn,
-    MDBValidation,
-    MDBValidationItem
-} from 'mdb-react-ui-kit';
-import { useUserContext } from '../context/UserContext';
+import { Link } from "react-router-dom";
+import ConnexionComponent from "../components/Connexioncomponent";
 
 export default function Connexion() {
-
-    const { login } = useUserContext();
-
-    // function ValidateEmail(mail) {
-    //     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) {
-    //         return (true)
-    //     }
-    //     alert("You have entered an invalid email address!")
-    //     return (false)
-    // }
-
-    const [formValue, setFormValue] = useState({
-        email: '',
-        password: '',
-    });
-
-    const onChange = (e) => {
-        setFormValue({ ...formValue, [e.target.name]: e.target.value });
-    };
-
-    async function handleSubmit() {
-        console.log(formValue);
-        await login(formValue);
-    }
-
     return (
-        <MDBValidation className='row g-3' >
+        <div id="inscription">
 
-
-            <MDBValidationItem feedback='Please choose a username.' invalid className='col-md-4'>
-                <MDBInputGroup textBefore='@' className='mahdi'>
-                    <MDBInput
-                        type='email'
-                        value={formValue.email}
-                        className='form-control mahdi'
-                        id='validationCustomUsername'
-                        placeholder='email'
-                        required
-                        onChange={onChange}
-                        name='email'
-                        pattern='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/'
-                    />
-                </MDBInputGroup>
-            </MDBValidationItem>
-
-            <MDBValidationItem className='col-md-6' feedback='Mot de passe obligatoire' invalid>
-                <MDBInput
-                    type="password"
-                    value={formValue.password}
-                    name='password'
-                    onChange={onChange}
-                    id='validationCustom05'
-                    required
-                    label='Mot de passe'
-                />
-            </MDBValidationItem>
-            <div className='col-12'>
-                <MDBBtn type='button' onClick={handleSubmit}>Submit form</MDBBtn>
+            <div className="hero">
+                <div />
+                <div>
+                    <h1>Connexion</h1>
+                    <p>
+                        Créer votre compte, <Link to="/inscription"><span className="navbar-link mahdi">Inscription</span></Link>
+                    </p>
+                </div>
+                <div className="logo">
+                    <img src="../src/assets/logo.png" alt="" />
+                </div>
             </div>
-
-        </MDBValidation>
+            <div className="formulaire">
+                <div className="formulaire-interieur">
+                    <h2>
+                        Nous avons besoin de quelques informations pour créer votre profil
+                    </h2>
+                    <div> <ConnexionComponent /></div>
+                </div>
+            </div>
+        </div>
     );
 }

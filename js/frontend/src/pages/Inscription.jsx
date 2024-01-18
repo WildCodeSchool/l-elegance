@@ -1,5 +1,5 @@
 import InscriptionComponent from "../components/Inscription";
-import Connexion from "./Connexion";
+import Connexion from "../components/Connexioncomponent";
 
 export default function Inscription() {
   return (
