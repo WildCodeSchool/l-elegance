@@ -2,8 +2,12 @@ import Bandeau from "../components/Bandeau";
 import InfoPharma from "../components/InfoPharma";
 import Nav from "../components/Nav";
 import Card from "../components/Card";
+import { useQuestionContext } from "../context/QuestionContext";
 
 function Resultats() {
+  const { products } = useQuestionContext();
+  console.log(products);
+  const resCut = products.slice(0, 5);
   return (
     <>
       <Nav />
@@ -27,10 +31,11 @@ function Resultats() {
 
       <div className="container container-resultat">
         <div className="resultat">
-          <Card />
+          {resCut.map(ele => (<div><Card name={ele.name} details={ele.details} image_url={ele.image_url} /> <InfoPharma /></div>))}
+
         </div>
 
-        <InfoPharma />
+
       </div>
     </>
   );

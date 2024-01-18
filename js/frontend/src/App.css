@@ -348,10 +348,18 @@ section .mb-4 {
   }
 
   .container-nav {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 200%;
+  }
+  .underline-nav{
+    height: 1px;
     width: 100%;
+    position: absolute;
+    top: 120px;
+    background-color: rgba(255, 255, 255, 0.25);
   }
 
   .container-info-pharma {
@@ -443,4 +451,23 @@ section .mb-4 {
   .bandeau h2 {
     font-size: 20px;
   }
+}
+
+.navbar-link{
+  color: rgb(219, 218, 218);
+}
+.navbar-link:hover, .navbar-link:scope{
+  color: white;
+}
+.inscription{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.adam{
+  display: block;
+  margin: 0 auto;
+}
+.mahdi{
+  text-decoration: underline;
 }

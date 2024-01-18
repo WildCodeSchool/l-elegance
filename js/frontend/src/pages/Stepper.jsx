@@ -1,5 +1,10 @@
 import React, { useRef, useState } from "react";
-import { MDBBtn, MDBStepper, MDBStepperStep } from "mdb-react-ui-kit";
+import {
+  MDBBtn,
+  MDBSpinner,
+  MDBStepper,
+  MDBStepperStep,
+} from "mdb-react-ui-kit";
 import "./stepper.css";
 import "../components/ModalePopUp/modale.css";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +21,8 @@ function Stepper() {
   const navigate = useNavigate();
 
   const { data } = useQuestionContext();
+  const [wait, setWait] = useState(false);
+  const { sendSurvey } = useQuestionContext();
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const nextRef = useRef(null);
   const prevRef = useRef(null);
@@ -37,6 +44,18 @@ function Stepper() {
     }
   };
 
+  async function handleSubmit() {
+    await sendSurvey();
+    setWait(true);
+    await new Promise((e) => setTimeout(e, 3000));
+    navigate("/results");
+  }
+
+  const loading = (
+    <MDBSpinner role="status" size="sml">
+      <span className="visually-hidden">loading...</span>
+    </MDBSpinner>
+  );
   return (
     <div id="inscription">
       <div className="hero">
@@ -111,6 +130,36 @@ function Stepper() {
                 onClick={console.log(data)}
               >
                 envoyer
+              </MDBBtn>
+            ) : (
+              <MDBBtn
+                className="question-btn next"
+                onClick={nextQuestion}
+                ref={nextRef}
+              >
+                suivant
+              </MDBBtn>
+            )}
+          </div>
+          <div className="mb-3 btn-container">
+            {currentQuestion === 1 ? (
+              ""
+            ) : (
+              <MDBBtn
+                className="question-btn"
+                onClick={prevQuestion}
+                ref={prevRef}
+              >
+                précédent
+              </MDBBtn>
+            )}
+            {currentQuestion === 6 ? (
+              <MDBBtn
+                className="question-btn next"
+                type="button"
+                onClick={handleSubmit}
+              >
+                {wait ? loading : "envoyer"}
               </MDBBtn>
             ) : (
               <MDBBtn

@@ -39,8 +39,8 @@ services:
     tty: true
     ports:
       # HTTP
-      - target: 8501
-        published: 8501
+      - target: 5000
+        published: 5000
         protocol: tcp
 
   database:

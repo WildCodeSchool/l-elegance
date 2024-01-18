@@ -8,7 +8,8 @@ import {
 } from "mdb-react-ui-kit";
 import { useUserContext } from "../context/UserContext";
 
-export default function Inscription() {
+export default function InscriptionCo() {
+  const navigate = useNavigate();
   const { register } = useUserContext();
 
   // function ValidateEmail(mail) {
@@ -44,18 +45,19 @@ export default function Inscription() {
         invalid
         className="col-md-4"
       >
-        <MDBInput
-          label="Email"
-          type="email"
-          value={formValue.email}
-          className="form-control"
-          id="validationCustomUsername"
-          placeholder="email"
-          required
-          onChange={onChange}
-          name="email"
-          pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
-        />
+        <MDBInputGroup textBefore="@">
+          <MDBInput
+            type="email"
+            value={formValue.email}
+            className="form-control"
+            id="validationCustomUsername"
+            placeholder="email"
+            required
+            onChange={onChange}
+            name="email"
+            pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
+          />
+        </MDBInputGroup>
       </MDBValidationItem>
 
       <MDBValidationItem

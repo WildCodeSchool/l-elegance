@@ -27,6 +27,37 @@ export default function UserContextProvider({ children }) {
       return { userdb: null, message: err.response.data.message };
     }
   }
+  async function checkCredentials(credentials) {
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3310/api/user",
+        credentials
+      );
+      console.log("energistré ");
+      return {
+        token: data.token,
+        userdb: data.user,
+        message: data.message,
+      };
+    } catch (err) {
+      console.error(err);
+      return { userdb: null, message: err.response.data.message };
+    }
+  }
+
+  async function testPython() {
+    try {
+      const data = await axios.post("http://localhost:5000/api/123", {
+        cancer: 1,
+        chimio: 2,
+        radio: 3,
+        immuno: 4,
+      });
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   async function login(credentials) {
     const { userdb, message } = await checkCredentials(credentials);
@@ -76,6 +107,21 @@ export default function UserContextProvider({ children }) {
   const contextData = useMemo(
     () => ({ user, setUser, messageUser, setMessageUser, login, register }),
     [user, setUser, messageUser, setMessageUser, login, register]
+  );
+  return (
+    <userContext.Provider value={contextData}>{children}</userContext.Provider>
+  );
+  const contextData = useMemo(
+    () => ({
+      user,
+      setUser,
+      messageUser,
+      setMessageUser,
+      login,
+      register,
+      testPython,
+    }),
+    [user, setUser, messageUser, setMessageUser, login, register, testPython]
   );
   return (
     <userContext.Provider value={contextData}>{children}</userContext.Provider>

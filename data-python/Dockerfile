@@ -33,10 +33,13 @@ RUN pip3 install SQLAlchemy
 
 RUN pip3 install \
     dash \
-    dash_bootstrap_components
+    dash_bootstrap_components \
+    flask-cors \
+    flask
 
-EXPOSE 8501
+
+EXPOSE 5000
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
-ENTRYPOINT ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
