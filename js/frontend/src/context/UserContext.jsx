@@ -32,7 +32,7 @@ export default function UserContextProvider({ children }) {
     async function login(credentials) {
         const { userdb, message } = await checkCredentials(credentials);
         if (userdb) {
-            localStorage.setItem("user", JSON.stringify(userdb.token));
+            localStorage.setItem("token", JSON.stringify(userdb.token));
             setUser({
                 isConnected: true,
                 firstname: userdb.firstname,
@@ -48,9 +48,34 @@ export default function UserContextProvider({ children }) {
         }
     }
 
+    async function register(newUser) {
+        try {
+            const { message, insertId } = await axios.post(
+                "http://localhost:3310/api/users",
+                newUser
+            );
+            if (+insertId === 0) {
+                // à corriger
+                setMessageUser(message);
+                return false;
+            }
+
+            setMessageUser(message);
+            return true;
+        } catch (err) {
+            setMessageUser(err.response.data.message);
+            return false;
+        }
+    }
+
+    // function called to logout use, it empty the localstorage as well
+    function logout() {
+        setUser({ isConnected: false });
+        localStorage.removeItem("token");
+    }
 
     const contextData = useMemo(
-        () => ({ user, setUser, messageUser, setMessageUser, login }), [user, setUser, messageUser, setMessageUser, login]
+        () => ({ user, setUser, messageUser, setMessageUser, login, register }), [user, setUser, messageUser, setMessageUser, login, register]
     );
     return (
         <userContext.Provider value={contextData}>{children}</userContext.Provider>
