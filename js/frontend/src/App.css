@@ -1,0 +1,435 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+  box-sizing: border-box;
+  line-height: 2;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+/* Card */
+.container-card {
+  color: #3d3d3d;
+  padding: 30px 0;
+}
+
+.container-card p {
+  margin-top: 30px;
+  font-family: "Noto Sans";
+}
+
+.container-card h2 {
+  font-size: 25px;
+  font-family: "Noto Sans";
+  line-height: 1.2;
+}
+
+.text-card {
+  margin-top: 30px;
+  color: #3d3d3d;
+  line-height: 1.5;
+}
+
+.container-card-img {
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+.btn-more {
+  background-color: white !important; 
+  border: 1px solid #000 !important;
+  padding: 8px 30px !important;
+  font-family: "Inria Sans" !important;
+  font-size: 20px !important;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+  min-width: 20px;
+  max-width: 200px;
+}
+
+.btn-more-round {
+  background-color: black;
+  color: white;
+  border: 1px solid #cdc4ba;
+  padding: 8px 30px;
+  font-family: "Inria Sans";
+  font-size: 16px;
+  margin-top: 20px;
+  transition: 0.5s ease-in-out;
+  text-transform: uppercase;
+  /* border-radius: 50px; */
+}
+
+.btn-more-round:hover {
+  transform: scale(0.98);
+  border-radius: #cdc4ba;
+ 
+}
+.btn-more:hover {
+  transform: scale(0.98);
+  background-color: #cdc4ba;
+  color: #3d3d3d;
+  border: 1px solid #cdc4ba;
+}
+
+.title-h1 {
+  color: red;
+}
+
+/* Info pharma */
+.container-info-pharma {
+  background-color: #fcfaf6;
+  color: #3d3d3d;
+  font-size: 20px;
+  padding: 50px 0px;
+}
+
+.info-pharma {
+  background-color: #fcfaf6;
+  padding: 50px 10px;
+}
+.info-pharma h2 {
+  font-family: "Inria Sans";
+}
+.info-pharma h3 {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.info-pharma h4 {
+  font-family: "Noto Sans";
+  font-size: 16px;
+}
+
+.container-info-pharma h2 {
+  font-family: "Inria Sans";
+  font-size: 30px;
+  color: red;
+}
+
+.container-info-pharma h3 {
+  font-family: "Noto Sans";
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 30px;
+}
+
+.container-info-pharma h4 {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.recommandations h3 {
+  font-family: "Inria Sans";
+  font-size: 30px;
+}
+
+.adresse-pharma {
+  display: flex;
+  padding-top: 10px;
+}
+
+.adresse-pharma h4 {
+  padding-left: 10px;
+}
+
+.footer {
+  background-color: white;
+  border-top: 1px solid #e9e6e0;
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.footer span {
+  font-family: "Inria Sans";
+  font-size: 16px;
+  color: white;
+}
+/* PAge Resultat */
+.text-resultat {
+  color: #3d3d3d;
+  text-align: center;
+  background-color: #e9e6e0;
+  padding: 70px 10px;
+}
+
+.text-resultat h2 {
+  font-family: "Inria Sans";
+  font-size: 18px;
+}
+.text-resultat h3 {
+  font-family: "Inria Sans";
+  font-size: 30px;
+}
+
+.text-resultat p {
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.bandeau {
+  background-image: url(assets/img-basic.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.bandeau h2 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.container-presentation {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.container-presentation h2 {
+  font-family: "Inria Sans";
+  font-size: 30px;
+}
+
+.container-img-presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  width: 70%;
+}
+
+#inscription h1,
+#inscription h2 {
+  font-family: "Inria Sans";
+  padding: 50px 0;
+}
+
+#inscription h1 {
+  font-size: 50px;
+  line-height: 0.9em;
+  padding-bottom: 10px;
+}
+
+#inscription h2 {
+  font-size: 30px;
+}
+
+#inscription .hero {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: url("assets/img-basic.png") no-repeat center center/cover;
+  color: white;
+}
+
+#inscription .logo {
+  width: 100px;
+}
+#inscription .logo img {
+  width: 100%;
+  height: auto;
+}
+
+.recommandations {
+  margin-top: 70px;
+}
+
+.footer-container .img-fluid {
+  width: 30%;
+}
+
+section .mb-4{
+  margin: 0 !important;
+}
+
+
+@media all and (min-width: 1000px) {
+  .container-card {
+    display: flex;
+  }
+
+  .text-card {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .container-resultat {
+    display: flex;
+    margin-top: 50px;
+    min-height: 400px;
+  }
+
+  .bandeau {
+    height: 600px;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    margin-top: -200px;
+  }
+
+  .text-resultat {
+    padding: 100px 0;
+  }
+
+  .text-resultat p {
+    margin: 30px auto;
+    width: 60%;
+  }
+
+  .text-resultat h3 {
+    margin-top: -5px;
+  }
+  .navigation {
+    font-family: "Inria Sans";
+    align-items: center;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 0;
+    color: white;
+  }
+  .logo {
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navlink {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+  }
+
+  .navlink > span {
+    padding: 5px 30px;
+    margin: 0 10px;
+  }
+
+  .container-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container-info-pharma {
+    height: 400px;
+    padding: 50px 100px;
+  }
+
+  .info-pharma h3 {
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 30px;
+  }
+
+  .info-pharma h4 {
+    font-family: "Noto Sans";
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .info-pharma {
+    margin-left: 80px;
+    padding: 30px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .resultat {
+    width: 70%;
+  }
+
+  .container-card-img {
+    width: 400px;
+    min-height: 200px;
+  }
+
+  .container-presentation {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+
+  .container-text-presentation-home {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 50px;
+  }
+
+  #inscription {
+    display: flex;
+    min-height: 100dvh;
+  }
+
+  #inscription .hero {
+    flex: 1;
+    padding: 40px;
+  }
+  #inscription .formulaire {
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+  .footer-container .img-fluid {
+    width: 25%;
+    display: flex;
+
+  }
+
+  .logos{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
