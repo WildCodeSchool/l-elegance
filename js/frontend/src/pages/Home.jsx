@@ -1,3 +1,6 @@
+import Inscription from "../components/Inscription";
+import Connexion from "./Connexion";
+
 export default function Home() {
-    return <h1>Home1</h1>;
+    return <Inscription />;
 }
