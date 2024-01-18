@@ -417,3 +417,12 @@ body {
 .navbar-link:hover, .navbar-link:scope{
   color: white;
 }
+.inscription{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.adam{
+  display: block;
+  margin: 0 auto;
+}

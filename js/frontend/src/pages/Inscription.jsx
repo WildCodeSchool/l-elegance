@@ -4,6 +4,7 @@ import Connexion from "./Connexion";
 export default function Inscription() {
   return (
     <div id="inscription">
+
       <div className="hero">
         <div />
         <div>
@@ -21,7 +22,7 @@ export default function Inscription() {
           <h2>
             Nous avons besoin de quelques informations pour créer votre profil
           </h2>
-          <div>le formulaire ici</div>
+          <div> <InscriptionComponent /></div>
         </div>
       </div>
     </div>
