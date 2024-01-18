@@ -38,11 +38,11 @@ export default function Connexion() {
         <MDBValidation className='row g-3' >
 
             <MDBValidationItem feedback='Please choose a username.' invalid className='col-md-4'>
-                <MDBInputGroup textBefore='@'>
+                <MDBInputGroup textBefore='@' className='mahdi'>
                     <MDBInput
                         type='email'
                         value={formValue.email}
-                        className='form-control'
+                        className='form-control mahdi'
                         id='validationCustomUsername'
                         placeholder='email'
                         required

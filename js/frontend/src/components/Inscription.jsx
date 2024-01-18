@@ -8,7 +8,7 @@ import {
 } from 'mdb-react-ui-kit';
 import { useUserContext } from '../context/UserContext';
 
-export default function Inscription() {
+export default function InscriptionComponent() {
 
     const { register } = useUserContext();
 

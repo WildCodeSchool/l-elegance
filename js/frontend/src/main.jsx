@@ -5,14 +5,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import "mdb-react-ui-kit/dist/scss/mdb.dark.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Home from "./pages/Home";
 import UserContextProvider from "./context/UserContext";
 import Resultats from "./pages/Resultats";
-// import Contact from "./pages/Contact";
 import Inscription from "./pages/Inscription";
-import Page1 from "./pages/Page1";
 
 const router = createBrowserRouter([
   {

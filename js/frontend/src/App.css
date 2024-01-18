@@ -402,3 +402,36 @@ body {
     align-items: center;
   }
 }
+
+
+.mahdi{
+  border: none !important;
+}
+.mahdi:focus{
+  border: none !important;
+}
+.mahdi::selection{
+  border: none !important;
+}
+#validationCustomUsername{
+  border: none !important;
+  filter: drop-shadow(0 0 8px black);
+  outline: none !important;
+
+}
+#validationCustomUsername:focus{
+  border: none !important;
+  filter: drop-shadow(0 0 4px black);
+  outline: none !important;
+
+}
+#validationCustomUsername:focus-visible{
+  border: none !important;
+  filter: drop-shadow(0 0 4px black);
+  outline: none !important;
+
+}
+#validationCustomUsername:focus-within{
+  filter: drop-shadow(0 0 4px black);
+  outline: none !important;
+}
