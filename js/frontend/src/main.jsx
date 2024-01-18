@@ -29,8 +29,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/page1",
-        element: <Resultats />,
+        path: "/results",
+
+        element: <QuestionContextProvider>
+          <Resultats />
+        </QuestionContextProvider>,
       },
       {
         path: "/stepper",

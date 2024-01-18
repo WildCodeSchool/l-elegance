@@ -35,8 +35,8 @@ export default function QuestionContextProvider({ children }) {
 
   async function sendSurvey() {
     const res = await axios.post("http://localhost:5000/api/1", data);
-    console.log("result", res);
-    setProducts(res);
+    console.log("result", res.data);
+    setProducts([...res.data]);
   }
 
 
