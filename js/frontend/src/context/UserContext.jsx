@@ -9,6 +9,7 @@ export default function UserContextProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState({ isConnected: false });
   const [messageUser, setMessageUser] = useState({ isConnected: false });
+  const [suggestions, setSuggestions] = useState([]);
 
   async function checkCredentials(credentials) {
     try {
@@ -16,7 +17,6 @@ export default function UserContextProvider({ children }) {
         "http://localhost:3310/api/user",
         credentials
       );
-      console.log("energistré ");
       return {
         token: data.token,
         userdb: data.user,
@@ -25,37 +25,6 @@ export default function UserContextProvider({ children }) {
     } catch (err) {
       console.error(err);
       return { userdb: null, message: err.response.data.message };
-    }
-  }
-  async function checkCredentials(credentials) {
-    try {
-      const { data } = await axios.post(
-        "http://localhost:3310/api/user",
-        credentials
-      );
-      console.log("energistré ");
-      return {
-        token: data.token,
-        userdb: data.user,
-        message: data.message,
-      };
-    } catch (err) {
-      console.error(err);
-      return { userdb: null, message: err.response.data.message };
-    }
-  }
-
-  async function testPython() {
-    try {
-      const data = await axios.post("http://localhost:5000/api/123", {
-        cancer: 1,
-        chimio: 2,
-        radio: 3,
-        immuno: 4,
-      });
-      console.log(data);
-    } catch (err) {
-      console.error(err);
     }
   }
 
@@ -98,15 +67,54 @@ export default function UserContextProvider({ children }) {
     }
   }
 
+  function calculateAge(dateOfBirth) {
+    const now = new Date();
+    const diff = Math.abs(now - dateOfBirth);
+    const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+    return age;
+  }
+
   // function called to logout use, it empty the localstorage as well
   function logout() {
     setUser({ isConnected: false });
     localStorage.removeItem("token");
   }
 
+  async function getProposition(user) {
+    const newUser = {
+      Age: calculateAge(user.birthday),
+      profession: user.profession,
+      ville: user.city,
+    };
+    try {
+      const res = await axios.post("http://localhost:5000/ml", newUser);
+      setSuggestions([...res.data]);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
   const contextData = useMemo(
-    () => ({ user, setUser, messageUser, setMessageUser, login, register }),
-    [user, setUser, messageUser, setMessageUser, login, register]
+    () => ({
+      user,
+      setUser,
+      messageUser,
+      setMessageUser,
+      login,
+      register,
+      getProposition,
+      suggestions,
+    }),
+    [
+      user,
+      setUser,
+      messageUser,
+      setMessageUser,
+      login,
+      register,
+      getProposition,
+      suggestions,
+    ]
   );
   return (
     <userContext.Provider value={contextData}>{children}</userContext.Provider>
