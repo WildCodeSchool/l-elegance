@@ -74,7 +74,7 @@ export default function InscriptionCo() {
                         value={formValue.email}
                         className='form-control'
                         id='validationCustomUsername'
-                        label="email"
+                        label="Email"
                         required
                         onChange={onChange}
                         name='email'

@@ -34,7 +34,7 @@ export default function QuestionContextProvider({ children }) {
   })
 
   async function sendSurvey() {
-    const res = await axios.post("http://localhost:5000/api/1", data);
+    const res = await axios.post(`${import.meta.env.VITE_DATA_FLASK}/api/1`, data);
     const products = res.data.map(e => {
       e.id = e['Unnamed: 0']
       return e

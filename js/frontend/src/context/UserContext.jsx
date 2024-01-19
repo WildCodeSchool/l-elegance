@@ -2,6 +2,8 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// import.meta.env.VITE_BACKEND_URL
+// const {VITE_BACKEND_URL, VITE_DATA_FLASK} = process.env;
 
 const userContext = createContext();
 
@@ -27,7 +29,7 @@ export default function UserContextProvider({ children }) {
     async function checkCredentials(credentials) {
         try {
             const { data } = await axios.post(
-                "http://localhost:3310/api/user",
+                `${import.meta.env.VITE_BACKEND_URL}/api/user`,
                 credentials
             );
             console.log("energistré ", data.token);
@@ -80,7 +82,7 @@ export default function UserContextProvider({ children }) {
     async function register(newUser) {
         try {
             const { message, insertId } = await axios.post(
-                "http://localhost:3310/api/users",
+                `${import.meta.env.VITE_BACKEND_URL}/api/users`,
                 newUser
             );
             if (+insertId === 0) {
@@ -102,7 +104,7 @@ export default function UserContextProvider({ children }) {
         console.log("new user", newUser);
         // const newUser = { Age: , profession: user.profession, ville: user.city };
         try {
-            const res = await axios.post("http://localhost:5000/ml", newUser);
+            const res = await axios.post(`${import.meta.env.VITE_DATA_FLASK}/ml`, newUser);
             console.log(res.data);
             setSuggestions([...res.data]);
         } catch (error) {
