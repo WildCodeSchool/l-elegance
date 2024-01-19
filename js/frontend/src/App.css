@@ -55,7 +55,7 @@ body {
   border-radius: 8px;
 }
 .btn-more {
-  background-color: white !important; 
+  background-color: white !important;
   border: 1px solid #000 !important;
   padding: 8px 30px !important;
   font-family: "Inria Sans" !important;
@@ -63,7 +63,13 @@ body {
   margin-top: 20px;
   transition: transform 0.3s ease;
   min-width: 20px;
-  max-width: 200px;
+  max-width: 250px;
+}
+
+.btn-more:hover {
+  background-color: black !important;
+  border: 1px solid #000 !important;
+  color: white !important;
 }
 
 .btn-more-round {
@@ -82,17 +88,12 @@ body {
 .btn-more-round:hover {
   transform: scale(0.98);
   border-radius: #cdc4ba;
- 
 }
 .btn-more:hover {
   transform: scale(0.98);
   background-color: #cdc4ba;
   color: #3d3d3d;
   border: 1px solid #cdc4ba;
-}
-
-.title-h1 {
-  color: red;
 }
 
 /* Info pharma */
@@ -115,6 +116,16 @@ body {
   font-size: 16px;
   font-weight: 700;
   margin-top: 30px;
+}
+.card-result{
+  display: flex;
+  margin: 50px 0;
+}
+.cut{
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .info-pharma h4 {
@@ -254,7 +265,7 @@ body {
 }
 
 #inscription .logo {
-  width: 100px;
+  width: 200px;
 }
 #inscription .logo img {
   width: 100%;
@@ -269,10 +280,9 @@ body {
   width: 30%;
 }
 
-section .mb-4{
+section .mb-4 {
   margin: 0 !important;
 }
-
 
 @media all and (min-width: 1000px) {
   .container-card {
@@ -291,6 +301,8 @@ section .mb-4{
     display: flex;
     margin-top: 50px;
     min-height: 400px;
+    margin: 0 auto;
+
   }
 
   .bandeau {
@@ -307,6 +319,8 @@ section .mb-4{
   .text-resultat p {
     margin: 30px auto;
     width: 60%;
+    font-size: 17px;
+    line-height: 1.8;
   }
 
   .text-resultat h3 {
@@ -323,7 +337,7 @@ section .mb-4{
     color: white;
   }
   .logo {
-    width: 100px;
+    width: 200px;
     justify-content: center;
     align-items: center;
   }
@@ -346,7 +360,7 @@ section .mb-4{
     align-items: center;
     width: 200%;
   }
-  .underline-nav{
+  .underline-nav {
     height: 1px;
     width: 100%;
     position: absolute;
@@ -382,7 +396,7 @@ section .mb-4{
   }
 
   .resultat {
-    width: 70%;
+    width: 100%;
   }
 
   .container-card-img {
@@ -402,6 +416,8 @@ section .mb-4{
     flex-direction: column;
     width: 50%;
     margin-right: 50px;
+    line-height: 1.8;
+    font-size: 17px;
   }
 
   #inscription {
@@ -433,30 +449,34 @@ section .mb-4{
   .footer-container .img-fluid {
     width: 25%;
     display: flex;
-
   }
 
-  .logos{
+  .logos {
     display: flex;
     justify-content: flex-end;
   }
+
+  .bandeau h2 {
+    font-size: 20px;
+  }
 }
 
-.navbar-link{
+.navbar-link {
   color: rgb(219, 218, 218);
 }
-.navbar-link:hover, .navbar-link:scope{
+.navbar-link:hover,
+.navbar-link:scope {
   color: white;
 }
-.inscription{
+.inscription {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.adam{
+.adam {
   display: block;
   margin: 0 auto;
 }
-.mahdi{
+.mahdi {
   text-decoration: underline;
 }
