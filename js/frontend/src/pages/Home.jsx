@@ -42,18 +42,9 @@ function Home() {
       </div>
       <div className="container container-presentation">
         <div className="container-text-presentation-home">
-          <h2>Confiez-vous, nous vous guiderons au mieux</h2>
+          <h2>L'Oréal engagé dans la lutte contre le cancer</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            aliquam in lectus in consectetur. Suspendisse justo quam, eleifend
-            quis suscipit id, porttitor at nunc. Phasellus sit amet neque
-            bibendum, mollis nisi ac, tincidunt lorem. Cras lobortis tortor quis
-            nisl semper, id interdum nibh tincidunt. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Vivamus aliquam in lectus in
-            consectetur. Suspendisse justo quam, eleifend quis suscipit id,
-            porttitor at nunc. Phasellus sit amet neque bibendum, mollis nisi
-            ac, tincidunt lorem. Cras lobortis tortor quis nisl semper, id
-            interdum nibh tincidunt..
+            L'Oréal, en tant qu'entreprise, a pris l'initiative de s'engager activement dans la lutte contre le cancer. Cette démarche démontre son engagement envers la responsabilité sociale et son désir de contribuer positivement à la société. Les initiatives de lutte contre le cancer de L'Oréal peuvent prendre différentes formes, telles que le soutien à la recherche médicale, la sensibilisation du public, ou encore la mise en place de programmes d'aide aux patients. Grâce à ces actions, L'Oréal s'affirme comme une entreprise qui va au-delà de ses activités commerciales pour jouer un rôle significatif dans des causes sociales importantes, telles que la santé et le bien-être de la communauté.
           </p>
         </div>
 

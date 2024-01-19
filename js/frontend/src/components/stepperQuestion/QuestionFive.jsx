@@ -6,7 +6,7 @@ function QuestionFive() {
 
   return (
     <div>
-      <h4 className='answer-title'>Avez-vous des allergies connues à des ingrédients spécifiques dans les produits de soins de la peau ?</h4>
+      <h4 className='answer-title'>Avez-vous des allergies connues à des ingrédients spécifiques dans les produits de soins pour la peau ?</h4>
       <div className='answer'>
         <div >
           <button type='button' className={`answer-btn ${data.allergie ? "active" : ''}`} onClick={() => setData({ ...data, allergie: true })}>Oui</button>

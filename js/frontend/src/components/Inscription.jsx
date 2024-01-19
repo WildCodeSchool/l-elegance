@@ -143,7 +143,7 @@ export default function InscriptionCo() {
                 </MDBValidationItem>
 
                 <div className='col-12'>
-                    <MDBBtn type='button' onClick={handleSubmit}>S'inscrire</MDBBtn>
+                    <MDBBtn type='button' onClick={handleSubmit} className='btn-more' style={{ color: "black" }}>S'inscrire</MDBBtn>
                 </div>
             </MDBValidation>
         </div>

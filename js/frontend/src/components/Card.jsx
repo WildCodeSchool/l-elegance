@@ -6,7 +6,8 @@ function Card({ name, image_url, details, handleSeeMore, id }) {
         style={{
           backgroundImage: `url(${image_url ?? "https://www.beaute-test.com/uploads/images/products/ba764171c96fdb4de54f788e67747f99de7c7319.jpg"})`,
           height: "400px",
-          aspectRatio: "  2 / 3"
+          aspectRatio: "  2 / 3",
+          backgroundPosition: "cover"
         }}
       />
       <div className="text-card">

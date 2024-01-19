@@ -64,6 +64,7 @@ body {
   transition: transform 0.3s ease;
   min-width: 20px;
   max-width: 250px;
+  box-shadow: none !important;
 }
 
 .btn-more:hover {
@@ -469,8 +470,7 @@ section .mb-4 {
   color: white;
 }
 .inscription {
-  display: flex;
-  justify-content: center;
+
   width: 100%;
 }
 .adam {

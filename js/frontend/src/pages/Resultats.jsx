@@ -42,7 +42,7 @@ function Resultats() {
         subtitle={
           products.length === 0
             ? "Découvrez quelques produits makeup qui peuvent vous convenir"
-            : "L'Oréal vous accompagne  "
+            : "Le droit à prendre soin de soi "
         }
       />
 

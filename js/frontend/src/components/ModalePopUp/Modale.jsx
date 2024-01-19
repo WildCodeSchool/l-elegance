@@ -123,7 +123,7 @@ function Modale({ pop, handleClose, idProduct, centredModal, setCentredModal, to
           </MDBModalBody>
           <MDBModalFooter>
             <MDBBtn className="btn-more" color='secondary' onClick={toggleOpen}>
-              Close
+              Fermer
             </MDBBtn>
           </MDBModalFooter>
         </MDBModalContent>
