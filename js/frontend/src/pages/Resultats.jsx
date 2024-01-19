@@ -13,12 +13,18 @@ import Footer from "../components/Footer";
 function Resultats() {
   const { user } = useUserContext();
   const { products } = useQuestionContext();
-  const resCut = products.slice(0, 5);
-
   const [pop, setPop] = useState(false);
   const [displayPop, setDisplayPop] = useState(false);
+  const [idProduct, setIdProduct] = useState("");
+  const [centredModal, setCentredModal] = useState(false);
 
-  const handleActive = () => { };
+  const toggleOpen = (id) => {
+    setCentredModal(!centredModal);
+    setIdProduct(id)
+    // setDisplayPop(true);
+  };
+
+  const resCut = products.slice(0, 5);
 
   const handleClose = () => {
     setDisplayPop(!displayPop);
@@ -32,11 +38,11 @@ function Resultats() {
     <>
       <Nav />
       <Bandeau
-        title={products.length === 0 ? "Nous n'avons pas de résultats" : `${user.firstname ?? ""}  Notre seletion de produits pour vous`}
+        title={products.length === 0 ? "Nous n'avons pas de résultats" : `${user.firstname ?? ""}, notre seletion de produits pour vous`}
         subtitle={
           products.length === 0
             ? "Découvrez quelques produits makeup qui peuvent vous convenir"
-            : "L'Oréal vous accompagne  "
+            : "Le droit à prendre soin de soi "
         }
       />
 
@@ -69,10 +75,13 @@ function Resultats() {
                 name={ele.name}
                 details={ele.details}
                 image_url={ele.image_url}
+                handleSeeMore={toggleOpen}
+                id={ele.id}
               />{" "}
               <InfoPharma />
             </div>
           ))}
+          {centredModal && <Modale idProduct={idProduct} pop={pop} handleClose={handleClose} centredModal={centredModal} setCentredModal={setCentredModal} toggleOpen={toggleOpen} />}
         </div>
 
       </div>

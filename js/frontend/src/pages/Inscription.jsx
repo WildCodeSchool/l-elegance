@@ -1,5 +1,6 @@
 import InscriptionComponent from "../components/Inscription";
 import Connexion from "../components/Connexioncomponent";
+import { Link } from "react-router-dom";
 
 export default function Inscription() {
   return (
@@ -10,7 +11,7 @@ export default function Inscription() {
         <div>
           <h1>Création de votre compte</h1>
           <p>
-            Vous avez déja un compte ? <a href="/connexion">Connectez-vous</a>
+            Vous avez déja un compte ? <Link to="/connexion"><span className="navbar-link mahdi">Connectez-vous</span></Link>
           </p>
         </div>
         <div className="logo">

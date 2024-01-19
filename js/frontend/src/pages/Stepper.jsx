@@ -40,7 +40,7 @@ function Stepper() {
   async function handleSubmit() {
     await sendSurvey();
     setWait(true);
-    await new Promise((e) => setTimeout(e, 3000));
+    await new Promise((e) => setTimeout(e, 1500));
     navigate("/results");
   }
 
@@ -78,7 +78,7 @@ function Stepper() {
             <MDBStepperStep headText="ALLERGIES " itemId={5}>
               {""}
             </MDBStepperStep>
-            <MDBStepperStep headText="HYPEROSMIEs" itemId={6}>
+            <MDBStepperStep headText="HYPEROSMIES" itemId={6}>
               {""}
             </MDBStepperStep>
           </MDBStepper>

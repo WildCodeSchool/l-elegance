@@ -85,7 +85,7 @@ function Slider() {
     <div className="suggestion-make-up container">
       <div className="statement">
         <h3 className="sub-title">Découvrir</h3>
-        <h2 className="title">L'Oréal à de l'élégence.</h2>
+        <h2 className="title">L'Oréal a de l'élégance.</h2>
         <p className="description">
           Découvrez les réalisations, les engagements et les aspirations qui
           inspirent L'Oréal depuis plus de 100 ans.

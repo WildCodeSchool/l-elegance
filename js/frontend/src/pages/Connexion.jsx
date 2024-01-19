@@ -23,7 +23,7 @@ export default function Connexion() {
             <div className="formulaire">
                 <div className="formulaire-interieur">
                     <h2>
-                        Nous avons besoin de quelques informations pour créer votre profil
+                        Customisez votre visite en vous connectant
                     </h2>
                     {user.isconnected && (<div className='col-12'>
                         <MDBBtn type='button' onClick={logout}>Déconnexion</MDBBtn>

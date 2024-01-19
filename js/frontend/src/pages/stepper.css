@@ -91,7 +91,15 @@
 }
 
 @media all and (min-width: 1000px) {
-  .formulaire {
-    display: flex;
-  }
+
+}
+.formulaire-interieur{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+}  
+
+.formulaire {
+  display: flex;
+  justify-content: flex-start!important;
 }
