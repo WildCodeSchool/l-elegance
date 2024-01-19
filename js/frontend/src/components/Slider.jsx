@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import "../../style/slider.css";
+import { useUserContext } from "../context/UserContext";
 
 const product = [
   {
@@ -74,8 +76,11 @@ const product = [
   //       "https://img01.ztat.net/article/spp-media-p1/cc63c6ac71484805ad197d9442280000/4fe79f223d2747a7a98a7cc497cf2c53.jpg?imwidth=1800&filter=packshot",
   //   },
 ];
-
 function Slider() {
+  const { getProposition, calculateAge, suggestions, user } = useUserContext();
+  useEffect(() => {
+    getProposition({ Age: Math.floor(Math.random() * 40 + 20), profession: user.profession, ville: user.city.toLowerCase() });
+  }, [])
   return (
     <div className="suggestion-make-up container">
       <div className="statement">
@@ -87,10 +92,10 @@ function Slider() {
         </p>
       </div>
       <div className="slide-make-up">
-        {product.map((product) => (
-          <div key={product.id} className="card-make-up">
-            <img src={product.image} />
-            <p>{product.title}</p>
+        {suggestions.map((product, index) => (
+          <div key={index} className="card-make-up">
+            <img src={product.image_url} />
+            <p>{product.name}</p>
           </div>
         ))}
       </div>
