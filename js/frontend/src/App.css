@@ -190,9 +190,9 @@ body {
 }
 
 .bandeau {
-  background-image: url(assets/img-basic.png);
+  background-image: url(assets/home4.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: start;
   background-repeat: no-repeat;
   height: 300px;
   color: white;

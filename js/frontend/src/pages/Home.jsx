@@ -46,7 +46,7 @@ function Home() {
         </div>
 
         <div className="container-img-presentation">
-          <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
+          <img className="img-fluid" src="../src/assets/home3.jpg" alt="" />
         </div>
       </div>
       <Footer />

@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 function Stepper() {
   const [wait, setWait] = useState(false);
-  const { sendSurvey } = useQuestionContext();
+  const { sendSurvey, data } = useQuestionContext();
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const nextRef = useRef(null);
   const prevRef = useRef(null);
@@ -32,6 +32,7 @@ function Stepper() {
   }
 
   async function handleSubmit() {
+    console.log(data);
     await sendSurvey();
     setWait(true);
     await new Promise(e => setTimeout(e, 3000));
@@ -92,7 +93,7 @@ function Stepper() {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 }
