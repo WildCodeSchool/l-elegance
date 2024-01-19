@@ -1,15 +1,38 @@
-.window-product {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.modalpop {
   display: flex;
-  width: 100vw;
-  background-color: #d9d9d9;
-  /* opacity: 0.5; */
-  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
+
+.modal-img {
+  height: 400px;
+  width: 400px;
+}
+
+.titlez {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 auto;
+  font-family: "Inria Sans";
+  padding-bottom: 10px;
+}
+
+.modal-content {
+  padding: 50px;
+ border-radius: 0px !important;
+}
+
+.modal-footer {
+ border-top: none !important;
+}
+
+.btn-more {
+  border-radius: 0px !important;
+}
+
+
 
 .pop-up-product {
   /* height: 80vh; */
@@ -46,16 +69,7 @@
   border-top: 1px solid black;
 }
 
-.pop-up-product > .block-right > .title {
-  color: black;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
 
-.pop-up-product > .block-right > .description {
-  color: #d9d9d9;
-  font-style: italic;
-}
 
 .pop-up-product
   > .block-right

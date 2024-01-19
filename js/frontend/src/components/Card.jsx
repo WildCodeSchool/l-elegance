@@ -1,4 +1,4 @@
-function Card({ name, image_url, details }) {
+function Card({ name, image_url, details, handleSeeMore, id }) {
   return (
     <div className="container container-card">
       <div
@@ -14,7 +14,7 @@ function Card({ name, image_url, details }) {
         <p className="cut">
           {details}
         </p>
-        <button className="btn-more" type="button">
+        <button className="btn-more" type="button" onClick={() => handleSeeMore(id)}>
           Voir le détail
         </button>
       </div>
