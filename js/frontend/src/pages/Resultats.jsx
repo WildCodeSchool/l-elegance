@@ -4,11 +4,7 @@ import InfoPharma from "../components/InfoPharma";
 import Nav from "../components/Nav";
 import Card from "../components/Card";
 import Slider from "../components/Slider";
-<<<<<<< HEAD
 import Modale from "../components/ModalePopUp/Modale";
-=======
-import Modale from "../components/Modale pop up/Modale";
->>>>>>> 8a911f75176c3fb2934c3a47f4f2707769823f19
 // Import de Context.
 import { useQuestionContext } from "../context/QuestionContext";
 import { useUserContext } from "../context/UserContext";
@@ -22,7 +18,6 @@ function Resultats() {
   const [pop, setPop] = useState(false);
   const [displayPop, setDisplayPop] = useState(false);
 
-<<<<<<< HEAD
   const handleActive = () => { };
 
   const handleClose = () => {
@@ -30,15 +25,6 @@ function Resultats() {
     setPop(!pop);
     //   setTimeout(() => {
     //     setPop(false);
-=======
-  const handleActive = () => {};
-
-  const handleClose = () => {
-      setDisplayPop(!displayPop);
-      setPop(!pop);
-    //   setTimeout(() => {
-          //     setPop(false);
->>>>>>> 8a911f75176c3fb2934c3a47f4f2707769823f19
     // }, 500);
   };
 
