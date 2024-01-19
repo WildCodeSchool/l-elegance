@@ -1,18 +1,18 @@
-function Card() {
+function Card({ name, image_url, details }) {
   return (
     <div className="container container-card">
       <div
-        className="container-card-img"
-        style={{ backgroundImage: "url('./src/assets/img-basic.png')" }}
+        className="container-card-img "
+        style={{
+          backgroundImage: `url(${image_url ?? "https://www.beaute-test.com/uploads/images/products/ba764171c96fdb4de54f788e67747f99de7c7319.jpg"})`,
+          height: "400px",
+          aspectRatio: "  2 / 3"
+        }}
       />
       <div className="text-card">
-        <h2>Age Perfect Renaissance Cellulaire Midnight Sérum - 30ml</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          aliquam in lectus in consectetur. Suspendisse justo quam, eleifend
-          quis suscipit id, porttitor at nunc. Phasellus sit amet neque
-          bibendum, mollis nisi ac, tincidunt lorem. Cras lobortis tortor quis
-          nisl semper, id interdum nibh tincidunt.
+        <h2>{name ?? "Produit beauté"}</h2>
+        <p className="cut">
+          {details}
         </p>
         <button className="btn-more" type="button">
           Voir le détail
