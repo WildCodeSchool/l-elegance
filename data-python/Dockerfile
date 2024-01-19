@@ -41,5 +41,3 @@ RUN pip3 install \
 EXPOSE 5000
 
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
-
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
