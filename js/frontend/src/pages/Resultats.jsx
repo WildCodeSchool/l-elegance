@@ -7,8 +7,11 @@ import Slider from "../components/Slider";
 import Modale from "../components/ModalePopUp/Modale";
 // Import de Context.
 import { useQuestionContext } from "../context/QuestionContext";
+import { useUserContext } from "../context/UserContext";
+import Footer from "../components/Footer";
 
 function Resultats() {
+  const { user } = useUserContext();
   const { products } = useQuestionContext();
   const resCut = products.slice(0, 5);
 
@@ -29,11 +32,11 @@ function Resultats() {
     <>
       <Nav />
       <Bandeau
-        title={products.length === 0 ? "Nous n'avons pas de résultats" : null}
+        title={products.length === 0 ? "Nous n'avons pas de résultats" : `${user.firstname ?? ""}  Notre seletion de produits pour vous`}
         subtitle={
           products.length === 0
             ? "Découvrez quelques produits makeup qui peuvent vous convenir"
-            : null
+            : "L'Oréal vous accompagne  "
         }
       />
 
@@ -50,6 +53,7 @@ function Resultats() {
               quis nisl semper, id interdum nibh tincidunt..
             </p>
           </div>
+
         </div>
       )}
 
@@ -70,7 +74,10 @@ function Resultats() {
             </div>
           ))}
         </div>
+
       </div>
+      <Slider />
+      <Footer />
     </>
   );
 }
