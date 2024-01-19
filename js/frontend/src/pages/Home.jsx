@@ -61,7 +61,6 @@ function Home() {
           <img className="img-fluid" src="../src/assets/img-basic.png" alt="" />
         </div>
       </div>
-
       <Footer />
     </>
   );
