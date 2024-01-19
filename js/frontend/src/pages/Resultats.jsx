@@ -4,11 +4,7 @@ import InfoPharma from "../components/InfoPharma";
 import Nav from "../components/Nav";
 import Card from "../components/Card";
 import Slider from "../components/Slider";
-<<<<<<< HEAD
-import Modale from "../components/Modale pop up/Modale";
-=======
 import Modale from "../components/ModalePopUp/Modale";
->>>>>>> b928f360b70970e034ec33509f6257911d147253
 // Import de Context.
 import { useQuestionContext } from "../context/QuestionContext";
 import { useUserContext } from "../context/UserContext";
