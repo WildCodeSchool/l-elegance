@@ -4,7 +4,7 @@ import InfoPharma from "../components/InfoPharma";
 import Nav from "../components/Nav";
 import Card from "../components/Card";
 import Slider from "../components/Slider";
-import Modale from "../components/Modale pop up/Modale";
+import Modale from "../components/ModalePopUp/Modale";
 // Import de Context.
 import { useQuestionContext } from "../context/QuestionContext";
 
@@ -15,13 +15,13 @@ function Resultats() {
   const [pop, setPop] = useState(false);
   const [displayPop, setDisplayPop] = useState(false);
 
-  const handleActive = () => {};
+  const handleActive = () => { };
 
   const handleClose = () => {
-      setDisplayPop(!displayPop);
-      setPop(!pop);
+    setDisplayPop(!displayPop);
+    setPop(!pop);
     //   setTimeout(() => {
-          //     setPop(false);
+    //     setPop(false);
     // }, 500);
   };
 
@@ -59,7 +59,6 @@ function Resultats() {
 
       <div className="container container-resultat">
         <div className="resultat">
-<<<<<<< HEAD
           {resCut.map((ele) => (
             <div className="card-result">
               <Card
@@ -70,11 +69,6 @@ function Resultats() {
               <InfoPharma />
             </div>
           ))}
-=======
-          {resCut.map(ele => (<div><Card name={ele.name} details={ele.details} image_url={ele.image_url} /> <InfoPharma /></div>))}
-          <Slider />
-          {displayPop && <Modale pop={pop} handleClose={handleClose} />}
->>>>>>> 8a911f75176c3fb2934c3a47f4f2707769823f19
         </div>
       </div>
     </>

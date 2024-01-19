@@ -25,7 +25,7 @@ export default function ConnexionComponent() {
     async function handleSubmit() {
         console.log(formValue);
         await login(formValue);
-        navigate("/");
+        navigate("/home");
     }
 
     return (

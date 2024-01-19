@@ -83,7 +83,7 @@ function Stepper() {
             </MDBStepperStep>
           </MDBStepper>
         </div>
-        <Link to="/" className="logo">
+        <Link to="/home" className="logo">
           <img src="../src/assets/logo.png" alt="" />
         </Link>
       </div>
