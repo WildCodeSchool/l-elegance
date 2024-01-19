@@ -1,29 +1,6 @@
 version: '3.4'
 
 services:
-  php:
-    build:
-      context: ./back-php
-      target: phpserver
-    container_name: ${PROJECT_NAME}-php
-    env_file:
-      - ./back-php/.env
-      - ../envs/.env-${GITHUB_REPOSITORY_NAME}
-    environment:
-      DATABASE_URL: mysql://${USER_NAME}:${USER_PASSWORD}@${DATABASE_SUBDOMAIN_NAME}-db:3306/${DB_NAME}?serverVersion=8&charset=utf8mb4
-    volumes:
-      - ./public/uploads:/app/public/uploads
-    restart: always
-    networks:
-      - proxy
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=proxy"
-      - "traefik.http.routers.${PROJECT_NAME}-php-secure.rule=Host(`api.${PROJECT_NAME}.${HOST}`)"
-      - "traefik.http.routers.${PROJECT_NAME}-php-secure.entrypoints=websecure"
-      - "traefik.http.routers.${PROJECT_NAME}-php-secure.service=svc_${PROJECT_NAME}-php"
-      - "traefik.http.services.svc_${PROJECT_NAME}-php.loadbalancer.server.port=80"
-
   js:
     build: ./js
     container_name: ${PROJECT_NAME}-js
