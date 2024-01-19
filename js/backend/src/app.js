@@ -28,7 +28,7 @@ app.use(cors());
 // For example: ["http://mysite.com", "http://another-domain.com"]
 
 /*
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use(
   cors({
