@@ -1,4 +1,8 @@
-function Card({ name, image_url, details }) {
+import React, { useEffect } from "react";
+
+function Card({ name, image_url, details, handleSeeMore, id,  }) {
+
+
   return (
     <div className="container container-card">
       <div
@@ -10,7 +14,7 @@ function Card({ name, image_url, details }) {
         <p>
           {details}
         </p>
-        <button className="btn-more" type="button">
+        <button className="btn-more" type="button" onClick={() => handleSeeMore(id)}>
           Voir le détail
         </button>
       </div>
