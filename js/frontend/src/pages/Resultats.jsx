@@ -38,7 +38,7 @@ function Resultats() {
     <>
       <Nav />
       <Bandeau
-        title={products.length === 0 ? "Nous n'avons pas de résultats" : `${user.firstname ?? ""}  Notre seletion de produits pour vous`}
+        title={products.length === 0 ? "Nous n'avons pas de résultats" : `${user.firstname ?? ""}, notre seletion de produits pour vous`}
         subtitle={
           products.length === 0
             ? "Découvrez quelques produits makeup qui peuvent vous convenir"
