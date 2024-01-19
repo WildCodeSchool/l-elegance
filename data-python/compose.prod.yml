@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   data:
-    build: .
+    build: ./
     container_name: ${PROJECT_NAME}-data
     env_file:
       - ../../envs/.env-${GITHUB_REPOSITORY_NAME}
