@@ -1,6 +1,12 @@
+import React, { useEffect } from "react";
 import "../../style/slider.css";
+import { useUserContext } from "../context/UserContext";
 
 function Slider() {
+  const { getProposition, calculateAge, suggestions, user } = useUserContext();
+  useEffect(() => {
+    getProposition({ Age: Math.floor(Math.random() * 40 + 20), profession: user.profession, ville: user.city.toLowerCase() });
+  }, [])
   return (
     <div className="suggestion-make-up">
       <div className="statement">
