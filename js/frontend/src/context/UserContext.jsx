@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -11,6 +11,19 @@ export default function UserContextProvider({ children }) {
     const [messageUser, setMessageUser] = useState({ isConnected: false });
     const [suggestions, setSuggestions] = useState([]);
 
+    function onLoad() {
+        try {
+            const userLS = JSON.parse(localStorage.getItem("user"));
+            if (userLS) {
+                setUser({ ...userLS, Age: Math.floor(Math.random() * 40 + 20), isConnected: true });
+                navigate("/home");
+            }
+            console.log({ ...userLS, Age: Math.floor(Math.random() * 40 + 20) });
+        } catch (error) {
+
+        }
+    }
+
     async function checkCredentials(credentials) {
         try {
             const { data } = await axios.post(
@@ -19,7 +32,7 @@ export default function UserContextProvider({ children }) {
             );
             console.log("energistré ", data.token);
 
-            console.log("energistré ");
+            console.log("energistré ", data.user);
             return {
                 token: data.token,
                 userdb: data.user,
@@ -33,15 +46,21 @@ export default function UserContextProvider({ children }) {
 
 
     async function login(credentials) {
-        const { userdb, message } = await checkCredentials(credentials);
+        const { userdb, message, token } = await checkCredentials(credentials);
         if (userdb) {
-            localStorage.setItem("token", JSON.stringify(userdb.token));
+            localStorage.setItem("token", JSON.stringify(token));
+            localStorage.setItem("user", JSON.stringify(userdb));
+
             setUser({
                 isConnected: true,
                 firstname: userdb.firstname,
                 lastname: userdb.lastname,
                 email: userdb.email,
+                city: userdb.city,
+                profession: userdb.profession,
+
             });
+            // localStorage.setItem("user",JSON.stringify(user));
             axios.defaults.headers.common.Authorization = `Bearer ${userdb.token}`;
             navigate("/page1");
             setMessageUser(message);
@@ -79,14 +98,15 @@ export default function UserContextProvider({ children }) {
     }
 
 
-    async function getProposition(user) {
-        const newUser = { Age: calculateAge(user.birthday), profession: user.profession, ville: user.city };
+    async function getProposition(newUser) {
+        console.log("new user", newUser);
+        // const newUser = { Age: , profession: user.profession, ville: user.city };
         try {
             const res = await axios.post("http://localhost:5000/ml", newUser);
             console.log(res.data);
             setSuggestions([...res.data]);
         } catch (error) {
-            console.log(err.message)
+            console.log(error.message)
         }
 
     }
@@ -95,12 +115,17 @@ export default function UserContextProvider({ children }) {
     function logout() {
         setUser({ isConnected: false });
         localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
     }
 
     const contextData = useMemo(
-        () => ({ user, setUser, messageUser, setMessageUser, login, register, calculateAge, getProposition, suggestions }),
-        [user, setUser, messageUser, setMessageUser, login, register, calculateAge, getProposition, suggestions]
+        () => ({ logout, user, setUser, messageUser, setMessageUser, login, register, calculateAge, getProposition, suggestions }),
+        [logout, user, setUser, messageUser, setMessageUser, login, register, calculateAge, getProposition, suggestions]
     );
+    useEffect(() => {
+        onLoad();
+    }, []);
     return (
         <userContext.Provider value={contextData}>{children}</userContext.Provider>
     );

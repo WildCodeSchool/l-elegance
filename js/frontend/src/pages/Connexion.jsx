@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import ConnexionComponent from "../components/Connexioncomponent";
+import { MDBBtn } from "mdb-react-ui-kit";
+import { useUserContext } from "../context/UserContext";
 
 export default function Connexion() {
+    const { user, logout } = useUserContext();
     return (
         <div id="inscription">
 
@@ -22,7 +25,10 @@ export default function Connexion() {
                     <h2>
                         Nous avons besoin de quelques informations pour créer votre profil
                     </h2>
-                    <div> <ConnexionComponent /></div>
+                    {user.isconnected && (<div className='col-12'>
+                        <MDBBtn type='button' onClick={logout}>Déconnexion</MDBBtn>
+                    </div>)}
+                    {!user.isconnected && <div><ConnexionComponent /></div>}
                 </div>
             </div>
         </div>
