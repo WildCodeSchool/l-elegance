@@ -5,8 +5,8 @@ services:
     build: ./
     container_name: ${PROJECT_NAME}-data
     env_file:
-      - ./docker-entry.sh:/etc/entrypoint.sh
-    entrypoint: [ "sh", "/etc/entrypoint.sh" ]
+      - ../../envs/.env-${GITHUB_REPOSITORY_NAME}
+    entrypoint: ["python", "-m", "flask", "run", "--host=0.0.0.0"]
     environment:
       API_URL: "https://api.${PROJECT_NAME}.${HOST}"
       APP_SECRET: ${APP_SECRET:-123456789}
